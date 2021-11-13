@@ -1,0 +1,45 @@
+<div class="side-nav">
+  <nav>
+    <div class="logo-detail my-4">
+      <i></i>
+      <span class="logo-name">eMedicalRecords</span>
+    </div>
+
+    <div class="container" style="padding: 1.5rem 1.5rem 0 1.5rem; ">
+      <ul class="m-0 p-0">
+        <span *ngFor="let menuItem of config?.items">
+          <li class="side-nav-item">
+            <a class="p-3" href=""
+               routerLinkActive="active"
+               [routerLink]="menuItem.path"
+               (click)="$event.preventDefault();">
+              <i class="icon" [ngClass]='menuItem.icon'></i>
+              <span class="title">{{menuItem.title}}</span>
+            </a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="other-section">
+
+    <div class="profile-part">
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <div class="row">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img class="rounded-circle mt-4" width="50px" src="https://www.kindpng.com/picc/m/198-1985282_doctor-profile-icon-png-transparent-png.png">
+              <span class="font-weight-bold">{{userService.getUser().personalNumber}}</span>
+              <span class="font-weight-bold">{{userService.getUser().name}}</span>
+              <span class="text-black-50">{{userService.getUser().specification}}</span>
+              <a class="mt-3" href="" (click)="$event.preventDefault();" style="color: black;">
+                <i class="fa fa-sign-out" ></i> Odhlásiť sa
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

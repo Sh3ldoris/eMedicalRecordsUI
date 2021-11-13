@@ -75,7 +75,8 @@
               "browserTarget": "eMedical-records-system-UI:build:production"
             },
             "development": {
-              "browserTarget": "eMedical-records-system-UI:build:development"
+              "browserTarget": "eMedical-records-system-UI:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

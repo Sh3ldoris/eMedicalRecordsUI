@@ -7,13 +7,18 @@ import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { ReactiveFormsModule  } from '@angular/forms'
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     RouterModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

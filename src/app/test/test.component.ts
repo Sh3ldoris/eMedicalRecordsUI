@@ -9,14 +9,14 @@ import {HttpClient} from "@angular/common/http";
 export class TestComponent implements OnInit {
 
   constructor(private httpService: HttpClient) {
-    this.getTestData().subscribe(
+    /*this.getTestData().subscribe(
       (data: any) => {
         console.log(data);
       },
       (error: any) => {
         console.log(error);
       }
-    );
+    );*/
 
   }
 

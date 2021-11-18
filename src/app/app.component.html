@@ -1,7 +1,7 @@
 <div class="w-page">
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="!this.sharedService.isWithOutNavigationBar()"></app-navbar>
 
-  <div class="page-content mt-4">
+  <div class="page-content mt-4" [ngClass]="{'expanded' : this.sharedService.isWithOutNavigationBar()}">
     <div class="container-fluid">
       <router-outlet></router-outlet>
     </div>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {User} from "../objects/user.config";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   public getUser(): User {
     return {
@@ -14,5 +15,9 @@ export class UserService {
       name: 'MUDr. Vladimír Kucko',
       specification: 'oftalmológ'
     }
+  }
+
+  public isUserLoggedIn(): boolean {
+    return this.auth.isLogged;
   }
 }

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color-full: #27c3d2;
+  --main-color-light: #ecfefe;
+}
+
+
 
 a {
   text-decoration: none;
@@ -6,4 +12,31 @@ a {
 
 li {
   list-style: none;
+}
+
+.logo-name {
+  font-size: 1.65rem;
+  color: var(--main-color-full);
+  font-weight: 600;
+}
+
+.input {
+  background-color: #f3f3f3;
+  border-radius: 12px;
+  border: 0;
+  font-size: 1.1rem;
+  height: 3rem;
+  box-sizing: border-box;
+  color: #6c88a3;
+}
+
+.input:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #27c3d2;
+}
+
+.btn.basic {
+  color: white;
+  background-color: var(--main-color-full);
+  border-color: var(--main-color-full);
+  border-radius: 14px;
 }

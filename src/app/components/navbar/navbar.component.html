@@ -33,7 +33,7 @@
               <span class="font-weight-bold">{{userService.getUser().personalNumber}}</span>
               <span class="font-weight-bold">{{userService.getUser().name}}</span>
               <span class="text-black-50">{{userService.getUser().specification}}</span>
-              <a class="mt-3" href="" (click)="$event.preventDefault();" style="color: black;">
+              <a class="mt-3" href="" (click)="$event.preventDefault(); logOut()" style="color: black;">
                 <i class="fa fa-sign-out" ></i> Odhlásiť sa
               </a>
             </div>

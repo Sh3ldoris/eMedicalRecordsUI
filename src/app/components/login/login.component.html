@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="col-8 col-sm-7 col-md-5 col-lg-3 shadow loginForm">
+    <div class="container-fluid">
+      <form class="text-center" (ngSubmit)="submitLogin()" [formGroup]="loginForm">
+        <div class="logo-name py-5 col-12">eMedicalRecords</div>
+        <div class="col-10 offset-1 mb-3">
+          <input type="text" class="form-control input" placeholder="Osobné číslo lekára" formControlName="personalNumber"
+                 [class.is-invalid]="!isLoginInformationRight">
+        </div>
+        <div class="col-10 offset-1 mb-4">
+          <input type="password" class="form-control input" placeholder="Heslo" formControlName="password"
+                 [class.is-invalid]="!isPasswordRight">
+        </div>
+        <button [disabled]="loginForm.invalid" type="submit" class="btn basic btn-lg col-6" [ngClass]="{'disabled' : loginForm.invalid}">
+          <span *ngIf="isLoading!=true">Prihlásiť</span>
+        </button>
+
+        <div *ngIf="!isLoginInformationRight"><p class="text-danger mt-3">Ľutujeme, prihlasovacie údaje, ktorého ste zadali sú neplatné. Skontrolujte svoje používateľské meno alebo heslo a skúste znova.</p></div>
+        <p class="mt-5 mb-3 text-muted">© 2021 Lany</p>
+      </form>
+    </div>
+  </div>
+</div>

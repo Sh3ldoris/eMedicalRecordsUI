@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MenuConfig, MenuItemConfig} from "../../objects/menu.config";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,8 @@ export class NavbarComponent implements OnInit {
   public config?: MenuConfig;
 
   constructor(public userService: UserService,
-              private router: Router) {}
+              private router: Router,
+              private auth: AuthService) {}
 
   ngOnInit(): void {
     this.setConfig();
@@ -51,6 +53,11 @@ export class NavbarComponent implements OnInit {
 
   public navigateTo(menuItem: MenuItemConfig) {
       this.router.navigate([menuItem.path]);
+  }
+
+  logOut() {
+    this.auth.logOut();
+    this.router.navigate(['/sign-in']);
   }
 
 }

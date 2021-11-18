@@ -5,3 +5,9 @@
   height: calc(100vh - 1.5rem);
   border-radius: 14px 14px 0 0;
 }
+
+.page-content.expanded {
+  background: rgba(211, 211, 211, 0.29);
+  margin: 0!important;
+  height: 100vh;
+}

@@ -11,6 +11,12 @@ import { ReactiveFormsModule  } from '@angular/forms'
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
+import { AllPatientsComponent } from './components/all-patients/all-patients.component';
+import { RecordsListComponent } from './components/records-list/records-list.component';
+import { RecordDetailComponent } from './components/record-detail/record-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,10 @@ import { FilterComponent } from './components/filter/filter.component';
     TestComponent,
     NavbarComponent,
     LoginComponent,
-    FilterComponent
+    FilterComponent,
+    AllPatientsComponent,
+    RecordsListComponent,
+    RecordDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +36,9 @@ import { FilterComponent } from './components/filter/filter.component';
     RouterModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
         {
           title: 'Pacienti',
           icon: 'fa fa-users',
-          path: '/patients',
+          path: '/patients/all',
         },
         {
           title: 'Moji pacienti',

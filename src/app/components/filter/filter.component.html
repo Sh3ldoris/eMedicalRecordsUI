@@ -1,25 +1,33 @@
-<div class="filter-wrapper p-3">
-  <form [formGroup]="filterForm">
+<div class="filter-wrapper px-2 py-2">
+  <form>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3 py-0 px-1">
-          <input type="text" class="form-control input" placeholder="Rodné číslo" formControlName="birthNumber">
-        </div>
-        <div class="col-3 py-0 px-1">
-          <input type="text" class="form-control input" placeholder="Meno" formControlName="firstName">
-        </div>
-        <div class="col-3 py-0 px-1">
-          <input type="text" class="form-control input" placeholder="Priezvisko" formControlName="lastName">
-        </div>
-        <div class="col-3 py-0 px-1">
-          <input type="text" class="form-control input" placeholder="Adresa" formControlName="address">
-        </div>
-        <div class="col-2">
-          <button type="submit" class="btn basic">
-            Prihlásiť
-          </button>
+        <ng-container *ngFor="let item of config.items">
+          <div class="col-3 p-1">
+            <ng-container *ngIf="item.type === 'text'" [ngTemplateOutlet]="text" [ngTemplateOutletContext]="{ item: item }"></ng-container>
+          </div>
+        </ng-container>
+        <div class="col p-1 d-flex justify-content-end">
+          <div class="row flex-md-nowrap m-0">
+            <button class="btn basic reset d-inline-block col-auto">
+              Reset
+            </button>
+            <button type="submit" class="btn basic d-inline-block col-auto">
+              Filtrovať
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </form>
 </div>
+
+<ng-template #text let-item="item">
+  <input type="text"
+         [name]="'filter-input-' + item.id"
+         class="form-control"
+         id="filter-input-{{item.id}}"
+         placeholder="{{item.label}}"
+         [(ngModel)]="item.value"
+          (keypress)="printFoo(item)">
+</ng-template>

@@ -22,5 +22,33 @@
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
+
+    <p>Osobné údaje</p>
+    <div class="row">
+      <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Meno</mat-label>
+            <input matInput readonly="true" value="{{patient?.firstName}}">
+          </mat-form-field>
+      </div>
+      <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Priezvisko</mat-label>
+              <input matInput readonly="true" value="{{patient?.lastName}}">
+            </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Dátum narodenia</mat-label>
+          <input matInput readonly="true" value="{{patient?.birthDate?.toString()}}">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Dátum narodenia</mat-label>
+          <input matInput readonly="true" value="{{patient?.birthDate?.toString()}}">
+        </mat-form-field>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

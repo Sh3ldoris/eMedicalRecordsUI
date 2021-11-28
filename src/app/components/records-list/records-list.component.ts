@@ -11,6 +11,7 @@ export class RecordsListComponent implements OnInit {
   public records: MedicalRecord[] = [{id: 'fsdfs'}, {id: 'fffffd'}, {id: 'kjku'}];
   public patients: Patient[] = [
     {
+      birthDate: new Date(),
       birthNumber: '981010/4029',
       firstName: 'Adam',
       lastName: 'Lány',
@@ -22,6 +23,7 @@ export class RecordsListComponent implements OnInit {
       familyStatus: 'Slobodný'
     },
     {
+      birthDate: new Date(),
       birthNumber: '981010/4029',
       firstName: 'Jozo',
       lastName: 'Trapny',

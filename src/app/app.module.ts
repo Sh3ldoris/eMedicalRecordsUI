@@ -17,6 +17,8 @@ import { RecordsListComponent } from './components/records-list/records-list.com
 import { RecordDetailComponent } from './components/record-detail/record-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

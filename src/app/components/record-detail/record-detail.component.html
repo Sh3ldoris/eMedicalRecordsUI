@@ -1,54 +1,157 @@
-<mat-accordion class="example-headers-align">
-  <mat-expansion-panel hideToggle class="mb-1 small-shadow">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="text-truncate mt-1">
-        {{patient?.firstName + ' ' + patient?.lastName}}
-      </mat-panel-title>
-      <mat-panel-description>
-        <div class="col">
-          <div class="row">
-            <div class="col-2 mt-1 text-truncate ">
-              {{patient?.birthNumber}}
-            </div>
-            <div class="col mt-1 px-0 text-truncate ">
-              {{patient?.address}}
-            </div>
-            <div class="col px-0 d-flex justify-content-end">
-              <button type="submit" class="btn btn-sm basic d-inline-block col-auto">
-                Karta
-              </button>
-            </div>
-          </div>
-        </div>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+<p>Osobné údaje</p>
+<div class="row">
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Meno</mat-label>
+      <input matInput readonly="true" value="{{patient.person.firstName}}">
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Priezvisko</mat-label>
+      <input matInput readonly="true" value="{{patient.person.lastName}}">
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Rodné číslo</mat-label>
+      <input matInput readonly="true" value="{{patient.person.birthNumber}}">
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Dátum narodenia</mat-label>
+      <input matInput readonly="true" value="{{patient.person.birthDate.toString()}}">
+    </mat-form-field>
+  </div>
+  <div class="col col-xxl-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Rodinný stav</mat-label>
+      <input matInput readonly="true" value="{{patient.person.familyState}}">
+    </mat-form-field>
+  </div>
+  <div class="col col-xxl-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Zamestnanie</mat-label>
+      <input matInput readonly="true" value="{{patient.person.occupation}}">
+    </mat-form-field>
+  </div>
+</div>
 
-    <p>Osobné údaje</p>
-    <div class="row">
-      <div class="col">
-          <mat-form-field appearance="outline">
-            <mat-label>Meno</mat-label>
-            <input matInput readonly="true" value="{{patient?.firstName}}">
-          </mat-form-field>
-      </div>
-      <div class="col">
-            <mat-form-field appearance="outline">
-              <mat-label>Priezvisko</mat-label>
-              <input matInput readonly="true" value="{{patient?.lastName}}">
-            </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="outline">
-          <mat-label>Dátum narodenia</mat-label>
-          <input matInput readonly="true" value="{{patient?.birthDate?.toString()}}">
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="outline">
-          <mat-label>Dátum narodenia</mat-label>
-          <input matInput readonly="true" value="{{patient?.birthDate?.toString()}}">
-        </mat-form-field>
-      </div>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
+<p>Kontaktné údaje</p>
+<div class="row">
+  <div class="col col-xl-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Adresa</mat-label>
+      <input matInput readonly="true" value="{{patient.person.address}}">
+    </mat-form-field>
+  </div>
+  <div class="col col-xl-3">
+    <mat-form-field class="bounded" appearance="outline">
+      <mat-label>Telefón</mat-label>
+      <input matInput readonly="true" value="{{patient.person.phone}}">
+    </mat-form-field>
+  </div>
+</div>
+
+<p>Urgentné informácie</p>
+<div class="row">
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Výška (cm)</mat-label>
+      <input matInput readonly="true" value="{{patient.urgentInfo.height}}">
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Váha (kg)</mat-label>
+      <input matInput readonly="true" value="{{patient.urgentInfo.weight}}">
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="outline">
+      <mat-label>Krvná skupina</mat-label>
+      <input matInput readonly="true" value="{{patient.urgentInfo.bloodGroup}}">
+    </mat-form-field>
+  </div>
+  <div class="col col-xl-4 col-xxl">
+    <mat-form-field appearance="outline">
+      <mat-label>Tetanus</mat-label>
+      <input matInput readonly="true" value="{{patient.urgentInfo.tetanus.toString()}}">
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Alergie</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.allergies}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Dalšie risky</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.otherRisks}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Trvalé medikácie</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.permanentMedicals}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Infekcie</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.infections}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Darcovstvo</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.organDonation}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+  <div class="col col-md-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Transplantácie</mat-label>
+      <textarea matInput
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="6"
+                cdkTextareaAutosize="true"
+                readonly="true"
+                value="{{patient.urgentInfo.transplantation}}">
+          </textarea>
+    </mat-form-field>
+  </div>
+</div>

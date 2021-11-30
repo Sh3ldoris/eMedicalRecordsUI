@@ -3,6 +3,5 @@
 </div>
 
 <div class="mt-4">
-  <app-records-list></app-records-list>
+  <app-records-list [patients]="this.patientService.getAllPatient()"></app-records-list>
 </div>
-<p>all-patients works!</p>

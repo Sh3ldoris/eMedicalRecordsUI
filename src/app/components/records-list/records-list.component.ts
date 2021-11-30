@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MedicalRecord, Patient} from "../../objects/Record";
+import {PatientService} from "../../services/patient.service";
 
 @Component({
   selector: 'app-records-list',
@@ -8,37 +9,15 @@ import {MedicalRecord, Patient} from "../../objects/Record";
 })
 export class RecordsListComponent implements OnInit {
 
-  public records: MedicalRecord[] = [{id: 'fsdfs'}, {id: 'fffffd'}, {id: 'kjku'}];
-  public patients: Patient[] = [
-    {
-      birthDate: new Date(),
-      birthNumber: '981010/4029',
-      firstName: 'Adam',
-      lastName: 'Lány',
-      address: 'Zábrežná 203/8, Predajná',
-      phone: '+421944911835',
-      previousDiseases: 'Čierny kašeľ, kiahne',
-      currentDiseases: 'Idiopatická myokarditída',
-      allergies: 'Trávy, prach, kvety',
-      familyStatus: 'Slobodný'
-    },
-    {
-      birthDate: new Date(),
-      birthNumber: '981010/4029',
-      firstName: 'Jozo',
-      lastName: 'Trapny',
-      address: 'Zábrežná 203/8, Predajná',
-      phone: '+421944911835',
-      previousDiseases: 'Čierny kašeľ, kiahne',
-      currentDiseases: 'Idiopatická myokarditída',
-      allergies: 'Trávy, prach, kvety',
-      familyStatus: 'Slobodný'
-    },
-    ];
+  step = -1;
+  @Input() patients: Patient[] = [];
 
-  constructor() { }
+  constructor(private patientService: PatientService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  setStep(index: number) {
+    this.step = index;
   }
 
 }

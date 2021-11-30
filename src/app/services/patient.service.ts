@@ -18,6 +18,17 @@ export class PatientService {
       familyState: 'Sloboný',
       occupation: 'Študent'
     },
+    {
+      firstName: 'Emil',
+      lastName: 'Báči',
+      birthNumber: '981010/4029',
+      birthName: 'Báči',
+      birthDate: new Date(),
+      address: 'Potočná 400, Horná Dolná',
+      phone: '+421944911835',
+      familyState: 'Sloboný',
+      occupation: 'Robotník, fajnšmeker'
+    },
   ];
 
   private urgentInfo: UrgentInfo[] = [
@@ -32,6 +43,18 @@ export class PatientService {
       tetanus: new Date(),
       transplantation: 'Transplantovaná ľavá bradavka',
       bloodGroup: 'B+'
+    },
+    {
+      allergies: 'Mlieko, lepok',
+      otherRisks: 'Príliš nebezpečný pre svoje okolie',
+      permanentMedicals: 'Antihistamiká',
+      infections: 'Zltacka',
+      organDonation: 'Súhlas pre darovanie kostnej drene',
+      height: 180,
+      weight: 92,
+      tetanus: new Date(),
+      transplantation: '',
+      bloodGroup: '0'
     }
   ];
 
@@ -40,6 +63,11 @@ export class PatientService {
       code: 'SK019810',
       person: this.persons[0],
       urgentInfo: this.urgentInfo[0]
+    },
+    {
+      code: 'SK019810',
+      person: this.persons[1],
+      urgentInfo: this.urgentInfo[1]
     },
   ]
 

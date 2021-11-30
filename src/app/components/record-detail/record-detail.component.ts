@@ -8,7 +8,7 @@ import {Patient} from "../../objects/Record";
 })
 export class RecordDetailComponent implements OnInit {
 
-  @Input() patient: Patient | undefined;
+  @Input() patient: Patient;
 
   constructor() { }
 

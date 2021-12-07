@@ -27,7 +27,17 @@ export class HealthRecordService {
   constructor(private docsService: DoctorService) { }
 
   public getAllRecordsByPatientCode(pc: string) : HealthRecord[] {
-    return this.records.filter(r => r.patientCode === pc);
+    const result = this.records.filter(r => r.patientCode === pc);
+    result.sort((a, b) => {
+      if (a.date === b.date) {
+        return 0;
+      } else if (a.date > b.date) {
+        return -1
+      } else {
+        return 1;
+      }
+    });
+    return result;
   }
 
   public addNewRecord(record: HealthRecord): boolean {

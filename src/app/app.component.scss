@@ -39,3 +39,17 @@
     stroke: var(--main-color-full);
   }
 }
+
+
+::ng-deep .read-only.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: rgba(0,0,0,.12);
+}
+
+::ng-deep .read-only.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0,0,0,.12);
+}
+
+::ng-deep .read-only .mat-form-field-label-wrapper .mat-form-field-label {
+  color: rgba(0,0,0,.6);
+}
+

@@ -30,4 +30,9 @@ export class HealthRecordService {
     return this.records.filter(r => r.patientCode === pc);
   }
 
+  public addNewRecord(record: HealthRecord): boolean {
+    this.records.push(record);
+    return true;
+  }
+
 }

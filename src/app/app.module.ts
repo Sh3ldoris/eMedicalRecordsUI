@@ -24,6 +24,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HealthRecordListComponent } from './components/health-record-list/health-record-list.component';
 import { HealthRecordDetailComponent } from './components/health-record-detail/health-record-detail.component';
+import { NewHealthRecordComponent } from './components/new-health-record/new-health-record.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HealthRecordDetailComponent } from './components/health-record-detail/h
     PatientDocumentationComponent,
     HealthRecordListComponent,
     HealthRecordDetailComponent,
+    NewHealthRecordComponent,
   ],
   imports: [
     BrowserModule,

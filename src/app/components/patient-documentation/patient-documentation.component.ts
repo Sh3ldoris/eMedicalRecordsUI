@@ -12,6 +12,8 @@ export class PatientDocumentationComponent implements OnInit {
 
   @Input() patient: Patient;
 
+  isNewRecordFormOpen: boolean = false;
+
   constructor(private sharedService: SharedService,
               public recService: HealthRecordService) { }
 
@@ -20,8 +22,7 @@ export class PatientDocumentationComponent implements OnInit {
     if (this.sharedService.isLoadingContent) {
       this.sharedService.isLoadingContent = false;
     }
-
-    const array : {id: string, value: string}[] =  [
+    /*const array : {id: string, value: string}[] =  [
       {
         id: 'name',
         value: 'Adko'
@@ -38,8 +39,15 @@ export class PatientDocumentationComponent implements OnInit {
       example[item.id] = item.value;
     });
 
-    console.log(example);
+    console.log(example);*/
+  }
 
+  public onCloseReport(event: any) {
+    this.isNewRecordFormOpen = false;
+  }
+
+  openReportForm() {
+    this.isNewRecordFormOpen = true;
   }
 
 }

@@ -22,7 +22,7 @@ export class RecordsListComponent implements OnInit {
 
   async openPatientCard(patient: Patient) {
     this.sharedService.isLoadingContent = true;
-    await new Promise(f => setTimeout(f, 700));
+    //await new Promise(f => setTimeout(f, 700));
     this.sharedService.data = patient;
     this.router.navigate(['/patients/documentation']);
   }

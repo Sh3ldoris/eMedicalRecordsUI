@@ -1,0 +1,120 @@
+<div class="pt-2">
+  <div class="patient-info px-4 pt-3 pb-3 shadow-sm">
+    <div *ngIf="this.patient" class="row">
+      <div class="col-12">
+        <div class="row g-0">
+          <div class="col-auto d-none d-xl-block" style="padding-right: 1.5rem">
+            <img *ngIf="this.patient.person.gender === 'MALE'" src="assets/images/Male-profile-icon.png" width="120" height="auto" class="img-fluid" alt="">
+            <img *ngIf="this.patient.person.gender === 'FEMALE'" src="assets/images/Female-profile-icon.png" width="120" height="auto" class="img-fluid" alt="">
+          </div>
+          <div class="col-8 d-flex flex-column position-static">
+            <mat-tab-group class="without-bottom-border">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                 Identifikácia
+                </ng-template>
+
+                <div class="row info">
+                  <div class="field-names col-auto d-none d-lg-block">
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Meno a priezvisko:</span>
+                    </div>
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Adresa bydliska:</span>
+                    </div>
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Telefónny kontakt:</span>
+                    </div>
+                  </div>
+                  <div class="field-values col-auto d-block">
+                    <div class="row g-0 py-1">
+                      {{this.patient.person.firstName + ' ' + this.patient.person.lastName}}
+                    </div>
+                    <div class="row g-0 py-1">
+                      {{this.patient.person.address}}
+                    </div>
+                    <div class="row g-0 py-1">
+                      {{this.patient.person.phone}}
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  Poisťovňa
+                </ng-template>
+
+                <div class="row info">
+                  <div class="field-names col-auto d-none d-lg-block">
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Rodné číslo:</span>
+                    </div>
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Číslo poistenca:</span>
+                    </div>
+                    <div class="row g-0 py-1">
+                      <span class="text-end">Číslo poisťovne:</span>
+                    </div>
+                  </div>
+                  <div class="field-values col-auto d-block">
+                    <div class="row g-0 py-1">
+                      {{this.patient.person.birthNumber}}
+                    </div>
+                    <div class="row g-0 py-1">
+                      {{this.patient.code}}
+                    </div>
+                    <div class="row g-0 py-1">
+                      {{this.patient.insurance.insuranceCode}}
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <div class="col d-flex flex-column position-static">
+            <div class="d-flex justify-content-end align-items-center h-100">
+              <button type="submit" class="btn btn-sm basic h-100">
+                Pridať anamnézu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <button type="submit" class="btn btn-sm basic d-inline-block col-auto">
+    Pridať zdravotný záznam
+  </button>
+
+  <ng-container *ngIf="true">
+    <div class="new-patient mb-4 px-4 pt-3 pb-3 shadow-sm">
+      <p>Nový záznam pre pacienta: {{patient.person.firstName}} {{patient.person.lastName}}</p>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Názov záznamu</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Lekárska správa</mat-label>
+              <textarea matInput
+                        cdkAutosizeMinRows="5"
+                        cdkAutosizeMaxRows="10"
+                        cdkTextareaAutosize="true">
+             </textarea>
+            </mat-form-field>
+          </div>
+        </div>
+    </div>
+  </ng-container>
+</div>
+
+<div class="mt-2">
+  <app-health-record-list [records]="recService.getAllRecordsByPatientCode(patient.code)"></app-health-record-list>
+</div>

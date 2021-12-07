@@ -15,11 +15,11 @@ export class AppComponent implements OnInit{
 
   constructor(public sharedService: SharedService,
               private router: Router,
-              private userService: UserService) {}
+              private auth: AuthService) {}
 
   ngOnInit(): void {
     this.hideNavigationBar = this.sharedService.isWithOutNavigationBar();
-    if (!this.userService.isUserLoggedIn()) {
+    if (!this.auth.isLogIn()) {
       this.router.navigate(['/sign-in']);
     }
   }

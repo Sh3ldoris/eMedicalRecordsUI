@@ -1,35 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Patient, Person, UrgentInfo} from "../objects/Record";
+import {Insurance, Patient, Person, UrgentInfo} from "../objects/patient.config";
+import {PersonService} from "./person.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
-
-  private persons: Person[] = [
-    {
-      firstName: 'Adam',
-      lastName: 'Lány',
-      birthNumber: '981010/4029',
-      birthName: 'Lány',
-      birthDate: new Date(),
-      address: 'Zábrežná 203/8, Predaná',
-      phone: '+421944911835',
-      familyState: 'Sloboný',
-      occupation: 'Študent'
-    },
-    {
-      firstName: 'Emil',
-      lastName: 'Báči',
-      birthNumber: '981010/4029',
-      birthName: 'Báči',
-      birthDate: new Date(),
-      address: 'Potočná 400, Horná Dolná',
-      phone: '+421944911835',
-      familyState: 'Sloboný',
-      occupation: 'Robotník, fajnšmeker'
-    },
-  ];
 
   private urgentInfo: UrgentInfo[] = [
     {
@@ -58,20 +34,34 @@ export class PatientService {
     }
   ];
 
+  private insurance: Insurance[] = [
+    {
+      insuranceCode : '499013232'
+    },
+  ]
+
   private patients: Patient[] = [
     {
       code: 'SK019810',
-      person: this.persons[0],
+      insurance: this.insurance[0],
+      person: this.personService.getPersonByBirthNumber('981010/1423'),
       urgentInfo: this.urgentInfo[0]
     },
     {
       code: 'SK019810',
-      person: this.persons[1],
+      insurance: this.insurance[0],
+      person: this.personService.getPersonByBirthNumber('961210/3514'),
+      urgentInfo: this.urgentInfo[1]
+    },
+    {
+      code: 'SK014858',
+      insurance: this.insurance[0],
+      person: this.personService.getPersonByBirthNumber('961210/3514'),
       urgentInfo: this.urgentInfo[1]
     },
   ]
 
-  constructor() { }
+  constructor(private personService: PersonService) { }
 
   public getAllPatient(): Patient[] {
       return this.patients;

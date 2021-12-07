@@ -24,11 +24,11 @@ export class NavbarComponent implements OnInit {
   public setConfig() {
     const menuCnfg: MenuConfig = {
       items: [
-        {
+        /*{
           title: 'Test',
           icon: 'fa fa-ambulance',
           path: '/test',
-        },
+        },*/
         {
           title: 'Pacienti',
           icon: 'fa fa-users',

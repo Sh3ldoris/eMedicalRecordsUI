@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Ambulance, User} from "../objects/user.config";
+import {Ambulance, Doctor} from "../objects/user.config";
+import {PersonService} from "./person.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class DoctorService {
 
   ambulances: Ambulance[] = [
     {
@@ -17,42 +18,26 @@ export class UserService {
     }
   ];
 
-  users: User[] =  [
+  private doctors: Doctor[] = [
     {
       personalNumber: '5ZY0123',
       password: 'admin123',
-      name: 'MUDr. Vladimír Kucko',
+      person: this.personService.getPersonByBirthNumber('doctor/1'),
       specification: 'oftalmológ',
       ambulance: this.ambulances[0]
     },
     {
       personalNumber: '5ZY0153',
       password: 'lekar',
-      name: 'MUDr. Elena Auxtová',
+      person: this.personService.getPersonByBirthNumber('doctor/2'),
       specification: 'všeobecná starostlivosť o deti a dorast',
       ambulance: this.ambulances[1]
-    }
+    },
   ];
 
-  private currentUser: User = this.users[0];
-  private isUserSetOn: boolean = true;
+  constructor(private personService: PersonService) { }
 
-  constructor() { }
-
-  public getUser(): User {
-    return this.currentUser;
-  }
-
-  public isUserSet() : boolean {
-    return this.isUserSetOn;
-  }
-
-  public setUser(user: User) {
-    this.isUserSetOn = true;
-    this.currentUser = user;
-  }
-
-  public removeUser() {
-    this.isUserSetOn = false;
+  public getDoctorByPersonalNumber(pn: string) : Doctor {
+    return this.doctors.filter(d => d.personalNumber === pn)[0];
   }
 }

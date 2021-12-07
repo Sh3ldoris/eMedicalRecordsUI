@@ -1,13 +1,41 @@
 .page-content {
   background: linear-gradient(rgba(243, 249, 255, 0.97), rgba(236, 236, 248, 0.96), rgba(255, 251, 252, 0.91));
   margin-left: 320px;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
+  margin-top: 1.5rem;
   min-height: calc(100vh - 1.5rem);
   border-radius: 14px 14px 0 0;
+
+  .loading-content {
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 1.5rem;
+    left: 320px;
+    min-height: calc(100vh - 1.5rem);
+    min-width: calc(100vw - 320px - 1.5rem);;
+    z-index: 10000;
+
+    ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: var(--main-color-full);
+    }
+  }
 }
 
 .page-content.expanded {
   background: rgba(211, 211, 211, 0.29);
   margin: 0!important;
-  height: 100vh;
+}
+
+.loading {
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 10000;
+
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: var(--main-color-full);
+  }
 }

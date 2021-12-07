@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Patient} from "../../objects/Record";
+import {Patient} from "../../objects/patient.config";
 
 @Component({
   selector: 'app-record-detail',

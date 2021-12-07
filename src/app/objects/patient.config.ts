@@ -4,6 +4,7 @@ export interface MedicalRecord {
 
 export interface Patient {
   code: string,
+  insurance: Insurance,
   person: Person,
   urgentInfo: UrgentInfo
 }
@@ -11,6 +12,7 @@ export interface Patient {
 export interface Person {
   firstName: string,
   lastName: string,
+  gender: 'MALE' | 'FEMALE',
   birthName?: string,
   birthNumber: string,
   birthDate: Date,
@@ -33,4 +35,8 @@ export interface UrgentInfo {
   tetanus: Date,
   transplantation: string,
   bloodGroup: string
+}
+
+export interface Insurance {
+  insuranceCode: string
 }

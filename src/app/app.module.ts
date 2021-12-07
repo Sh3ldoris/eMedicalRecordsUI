@@ -19,6 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { PatientDocumentationComponent } from './components/patient-documentation/patient-documentation.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HealthRecordListComponent } from './components/health-record-list/health-record-list.component';
+import { HealthRecordDetailComponent } from './components/health-record-detail/health-record-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,10 @@ import {MatInputModule} from '@angular/material/input';
     FilterComponent,
     AllPatientsComponent,
     RecordsListComponent,
-    RecordDetailComponent
+    RecordDetailComponent,
+    PatientDocumentationComponent,
+    HealthRecordListComponent,
+    HealthRecordDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +51,8 @@ import {MatInputModule} from '@angular/material/input';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

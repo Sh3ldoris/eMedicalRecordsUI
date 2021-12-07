@@ -1,36 +1,33 @@
 <div class="list-wrapper" style="background-color: transparent !important;">
   <mat-accordion class="example-headers-align">
-    <ng-container *ngFor="let patient of patients; let i = index">
+    <ng-container *ngFor="let record of records; let i = index">
       <mat-accordion class="example-headers-align">
         <mat-expansion-panel hideToggle
-            [expanded]="step === i"
-            (opened)="setStep(i)"
-            class="mb-1 small-shadow">
+                             [expanded]="step === i"
+                             (opened)="setStep(i)"
+                             class="mb-1 small-shadow">
           <mat-expansion-panel-header>
             <mat-panel-title class="text-truncate mt-1">
-              {{patient.person.firstName + ' ' + patient.person.lastName}}
+              {{record.date.toString()}}
             </mat-panel-title>
             <mat-panel-description>
               <div class="col">
                 <div class="row">
-                  <div class="col-2 mt-1 text-truncate ">
-                    {{patient.person.birthNumber}}
-                  </div>
-                  <div class="col mt-1 px-0 text-truncate ">
-                    {{patient.person.address}}
+                  <div class="col-6 mt-1 text-truncate">
+                    {{record.title}}
                   </div>
                   <div class="col px-0 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-sm basic d-inline-block col-auto"
+                    <!--<button type="submit" class="btn btn-sm basic d-inline-block col-auto"
                             (click)="$event.stopPropagation(); openPatientCard(patient);">
                       Dokumentácia
-                    </button>
+                    </button>-->
                   </div>
                 </div>
               </div>
             </mat-panel-description>
           </mat-expansion-panel-header>
           <div class="mt-3">
-            <app-record-detail [patient]="patient"></app-record-detail>
+            <app-health-record-detail [record]="record"></app-health-record-detail>
           </div>
         </mat-expansion-panel>
       </mat-accordion>

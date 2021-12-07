@@ -1,0 +1,57 @@
+.patient-info {
+  background-color: white;
+  border-radius: 7px;
+  width: 100%;
+
+  .info {
+    padding-top: 1rem;
+    padding-left: .5rem;
+
+    font-size: 1rem ;
+    font-weight: 400;
+    letter-spacing: .05rem;
+
+    .field-names {
+      color: #acacac;
+      padding-right: .75rem;
+    }
+
+    .field-values {
+      padding: 0;
+    }
+  }
+}
+
+.new-patient {
+  background-color: white;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.basic {
+  border-radius: 6px;
+}
+
+.without-bottom-border ::ng-deep .mat-tab-header {
+  border-bottom: none;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels{
+  max-height: 1.4rem;
+
+  .mat-tab-label {
+    max-height: 1.3rem;
+  }
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: var(--main-color-full);
+}
+
+::ng-deep .mat-tab-body .mat-tab-body-content {
+  overflow: hidden;
+}
+
+mat-form-field {
+  width: 100%;
+}

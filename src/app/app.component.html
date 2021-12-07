@@ -1,9 +1,15 @@
 <div class="w-page">
   <app-navbar *ngIf="!this.sharedService.isWithOutNavigationBar()"></app-navbar>
 
-  <div class="page-content mt-4" [ngClass]="{'expanded' : this.sharedService.isWithOutNavigationBar()}">
-    <div class="container-fluid">
+  <div class="page-content" [ngClass]="{'expanded' : this.sharedService.isWithOutNavigationBar()}">
+    <div *ngIf="this.sharedService.isLoadingContent" class="loading-content d-flex justify-content-center align-items-center">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div class="container-fluid px-3">
       <router-outlet></router-outlet>
     </div>
   </div>
+</div>
+<div *ngIf="this.sharedService.isLoading" class="loading d-flex justify-content-center align-items-center">
+  <mat-spinner></mat-spinner>
 </div>

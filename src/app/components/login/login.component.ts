@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -24,14 +24,21 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    if (this.auth.isLogged) {
+    if (this.auth.isLogIn()) {
       this.router.navigate(['/']);
     }
   }
 
   submitLogin() {
-    this.auth.logIn();
-    this.router.navigate(['']);
+    for (const i in this.loginForm.controls) {
+      this.loginForm.controls[i].markAsDirty();
+    }
+    if (this.auth.logIn(this.loginForm.get('personalNumber')?.value,  this.loginForm.get('password')?.value)) {
+      this.router.navigate(['']);
+    } else {
+      this.isLoginInformationRight = false;
+      this.isPasswordRight = false;
+    }
   }
 
 }

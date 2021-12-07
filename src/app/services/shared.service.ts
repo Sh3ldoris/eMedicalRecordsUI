@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import {UserService} from "./user.service";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  constructor(private userService: UserService) { }
+  data: any;
+  isLoading: boolean = false;
+  isLoadingContent: boolean = false;
+
+  constructor(private auth: AuthService) { }
 
   public isWithOutNavigationBar(): boolean {
-    return !this.userService.isUserLoggedIn();
+    return !this.auth.isLogIn();
   }
 }

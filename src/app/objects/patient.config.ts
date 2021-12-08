@@ -6,7 +6,8 @@ export interface Patient {
   code: string,
   insurance: Insurance,
   person: Person,
-  urgentInfo: UrgentInfo
+  urgentInfo: UrgentInfo,
+  canAccess?: string[]
 }
 
 export interface Person {

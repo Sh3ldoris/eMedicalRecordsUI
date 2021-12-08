@@ -25,6 +25,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HealthRecordListComponent } from './components/health-record-list/health-record-list.component';
 import { HealthRecordDetailComponent } from './components/health-record-detail/health-record-detail.component';
 import { NewHealthRecordComponent } from './components/new-health-record/new-health-record.component';
+import { CanAccessPatientsComponent } from './components/can-access-patients/can-access-patients.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NewHealthRecordComponent } from './components/new-health-record/new-hea
     HealthRecordListComponent,
     HealthRecordDetailComponent,
     NewHealthRecordComponent,
+    CanAccessPatientsComponent,
   ],
   imports: [
     BrowserModule,

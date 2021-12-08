@@ -45,19 +45,29 @@ export class PatientService {
       code: 'SK019810',
       insurance: this.insurance[0],
       person: this.personService.getPersonByBirthNumber('981010/1423'),
-      urgentInfo: this.urgentInfo[0]
+      urgentInfo: this.urgentInfo[0],
+      canAccess: [
+        '5ZY0153'
+      ]
     },
     {
       code: 'SK019810',
       insurance: this.insurance[0],
       person: this.personService.getPersonByBirthNumber('961210/3514'),
-      urgentInfo: this.urgentInfo[1]
+      urgentInfo: this.urgentInfo[1],
+      canAccess: [
+        '5ZY0123'
+      ]
     },
     {
       code: 'SK014858',
       insurance: this.insurance[0],
       person: this.personService.getPersonByBirthNumber('961210/3514'),
-      urgentInfo: this.urgentInfo[1]
+      urgentInfo: this.urgentInfo[1],
+      canAccess: [
+        '5ZY0123',
+        '5ZY0153'
+      ]
     },
   ]
 
@@ -65,6 +75,11 @@ export class PatientService {
 
   public getAllPatient(): Patient[] {
       return this.patients;
+  }
+
+  public getAllPatientByDoctor(personalNumber: string): Patient[] {
+    console.log(personalNumber);
+    return this.patients.filter(p => p.canAccess && p.canAccess.includes(personalNumber));
   }
 
   public getPatientsByFilter(

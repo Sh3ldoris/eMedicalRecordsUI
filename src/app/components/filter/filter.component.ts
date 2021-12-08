@@ -11,10 +11,10 @@ export class FilterComponent implements OnInit {
 
   @Output() apply = new EventEmitter();
 
-  public config: Filter= {
+  public config: Filter = {
     items: [
       {
-        id: 'birth-number',
+        id: 'birthNumber',
         label: 'Rodné číslo',
         type: 'text',
         value: '',
@@ -57,12 +57,16 @@ export class FilterComponent implements OnInit {
    */
   applyFilter(): void {
     const query = this.setQueryFromFields();
-
+    console.log(query);
     this.apply.emit(query);
   }
 
-  printFoo(item: FilterItem) {
-    console.log(item.value);
+  resetFilter() {
+    this.config.items.forEach(item => {
+      item.value = '';
+    });
+
+    this.apply.emit(null);
   }
 
   /**
@@ -70,7 +74,13 @@ export class FilterComponent implements OnInit {
    * @private
    */
   private setQueryFromFields(): any {
+      let queryObj: any = {};
 
+      this.config.items.forEach(item => {
+        queryObj[item.id] = item.value;
+      });
+
+      return queryObj;
   }
 
 }

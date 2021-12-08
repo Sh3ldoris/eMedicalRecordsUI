@@ -8,22 +8,7 @@ import {HealthRecord} from "../../objects/health-record.config";
 })
 export class HealthRecordListComponent implements OnInit {
 
-  @Input() records: HealthRecord[] = [];/* = [
-    {
-      date: new Date(),
-      title: 'Obvodná prehliadka 2021',
-      doctor: 'MuDr Adam Lány',
-      ambulance: 'Obvodná ambulancia Predajná',
-      record: 'Prehliadka je v poriadku, vykonane vsetky potrebne ukony pre zistenie zdravotneho stavu pacienta. Krvny tlak v poriadku, vyska a vaha tak isto'
-    },
-    {
-      date: new Date(),
-      title: 'Odber krvi 2021',
-      doctor: 'MuDr Soňa Frčková',
-      ambulance: 'Obvodná ambulancia Predajná',
-      record: 'Prehliadka je v poriadku, vykonane vsetky potrebne ukony pre zistenie zdravotneho stavu pacienta. Krvny tlak v poriadku, vyska a vaha tak isto'
-    }
-  ];*/
+  @Input() records: HealthRecord[] = [];
 
   step = -1;
 

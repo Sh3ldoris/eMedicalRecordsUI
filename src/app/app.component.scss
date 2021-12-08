@@ -40,6 +40,20 @@
   }
 }
 
+//Outline when form field input is focused
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: var(--main-color-full);
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label-wrapper .mat-form-field-label {
+  color: var(--main-color-full);
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(108, 136, 163, 0.53);
+}
+
+
 
 ::ng-deep .read-only.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
   color: rgba(0,0,0,.12);
@@ -51,5 +65,11 @@
 
 ::ng-deep .read-only .mat-form-field-label-wrapper .mat-form-field-label {
   color: rgba(0,0,0,.6);
+}
+
+
+
+::ng-deep .mat-expansion-panel-header .mat-content {
+  display: block!important;
 }
 

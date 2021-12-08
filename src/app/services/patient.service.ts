@@ -66,4 +66,21 @@ export class PatientService {
   public getAllPatient(): Patient[] {
       return this.patients;
   }
+
+  public getPatientsByFilter(
+    filter: {
+      address: string,
+      birthNumber: string,
+      lastName: string,
+      name: string
+  }): Patient[] {
+
+    return this.patients.filter(
+      p =>
+        p.person.birthNumber.includes(filter.birthNumber) &&
+        p.person.lastName.toLocaleLowerCase().includes(filter.lastName.toLocaleLowerCase()) &&
+        p.person.firstName.toLocaleLowerCase().includes(filter.name.toLocaleLowerCase()) &&
+        p.person.address?.toLocaleLowerCase().includes(filter.address.toLocaleLowerCase())
+    );
+  };
 }

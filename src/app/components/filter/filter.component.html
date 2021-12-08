@@ -9,10 +9,12 @@
         </ng-container>
         <div class="col p-1 d-flex justify-content-end">
           <div class="row flex-md-nowrap m-0">
-            <button class="btn basic reset d-inline-block col-auto">
+            <button class="btn basic reset d-inline-block col-auto"
+                    (click)="resetFilter()">
               Reset
             </button>
-            <button type="submit" class="btn basic d-inline-block col-auto">
+            <button type="submit" class="btn basic d-inline-block col-auto"
+                    (click)="applyFilter();">
               Filtrovať
             </button>
           </div>
@@ -23,11 +25,8 @@
 </div>
 
 <ng-template #text let-item="item">
-  <input type="text"
-         [name]="'filter-input-' + item.id"
-         class="form-control"
-         id="filter-input-{{item.id}}"
-         placeholder="{{item.label}}"
-         [(ngModel)]="item.value"
-          (keypress)="printFoo(item)">
+  <mat-form-field appearance="outline">
+    <mat-label>{{item.label}}</mat-label>
+    <input matInput [(ngModel)]="item.value">
+  </mat-form-field>
 </ng-template>

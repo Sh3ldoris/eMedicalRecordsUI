@@ -28,6 +28,7 @@ export class RecordsListComponent implements OnInit {
   }
 
   setStep(index: number) {
+    console.log('Cliiiiick!');
     this.step = index;
   }
 

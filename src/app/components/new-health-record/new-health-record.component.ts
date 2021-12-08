@@ -5,6 +5,7 @@ import {HealthRecordService} from "../../services/health-record.service";
 import {UserService} from "../../services/user.service";
 import {DoctorService} from "../../services/doctor.service";
 import {HealthRecord} from "../../objects/health-record.config";
+import {Doctor} from "../../objects/user.config";
 
 @Component({
   selector: 'app-new-health-record',
@@ -15,6 +16,7 @@ export class NewHealthRecordComponent implements OnInit {
 
   @Output() close = new EventEmitter();
   @Input() patientCode: string;
+  doctor: Doctor;
 
   reportForm = this.fb.group({
     name: [null, Validators.required],
@@ -30,6 +32,7 @@ export class NewHealthRecordComponent implements OnInit {
               private doctorService: DoctorService) { }
 
   ngOnInit(): void {
+    this.doctor = this.doctorService.getDoctorByPersonalNumber(this.userService.getUser().personalNumber);
   }
 
   confirm() {
@@ -40,7 +43,7 @@ export class NewHealthRecordComponent implements OnInit {
       patientCode: this.patientCode,
       date: new Date(),
       title: this.reportForm.get('name')?.value,
-      doctor: this.doctorService.getDoctorByPersonalNumber(this.userService.getUser().personalNumber),
+      doctor: this.doctor,
       report: this.reportForm.get('report')?.value
     };
     console.log(newRecord);

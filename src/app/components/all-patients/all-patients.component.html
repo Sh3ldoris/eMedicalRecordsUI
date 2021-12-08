@@ -1,7 +1,7 @@
 <div class="pt-2">
-  <app-filter></app-filter>
+  <app-filter (apply)="filterApplied($event)"></app-filter>
 </div>
 
 <div class="mt-4">
-  <app-records-list [patients]="this.patientService.getAllPatient()"></app-records-list>
+  <app-records-list [patients]="this.patients"></app-records-list>
 </div>

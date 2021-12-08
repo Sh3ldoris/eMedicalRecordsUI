@@ -4,7 +4,17 @@
   --main-color-light: #ecfefe;
 }
 
+p {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 1.5rem!important;
+  margin-bottom: 1.4rem!important;
+}
 
+hr {
+  color: var(--main-color-full);
+  margin: 0.2rem 0 1.2rem 0;
+}
 
 a {
   text-decoration: none;
@@ -39,6 +49,10 @@ li {
   background-color: var(--main-color-full);
   border-color: var(--main-color-full);
   border-radius: 14px;
+}
+
+.fw-normal {
+  font-weight: 500!important;
 }
 
 html, body { height: 100%; }

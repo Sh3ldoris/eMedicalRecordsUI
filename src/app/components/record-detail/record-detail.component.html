@@ -21,7 +21,7 @@
   <div class="col">
     <mat-form-field appearance="outline" class="read-only">
       <mat-label>Dátum narodenia</mat-label>
-      <input matInput readonly="true" value="{{patient.person.birthDate.toString()}}">
+      <input matInput readonly="true" value="{{patient.person.birthDate.toLocaleDateString()}}">
     </mat-form-field>
   </div>
   <div class="col col-xxl-3">
@@ -37,7 +37,7 @@
     </mat-form-field>
   </div>
 </div>
-
+<hr/>
 <p>Kontaktné údaje</p>
 <div class="row">
   <div class="col col-xl-3">
@@ -53,7 +53,7 @@
     </mat-form-field>
   </div>
 </div>
-
+<hr/>
 <p>Urgentné informácie</p>
 <div class="row">
   <div class="col">
@@ -77,7 +77,7 @@
   <div class="col col-xl-4 col-xxl">
     <mat-form-field appearance="outline" class="read-only">
       <mat-label>Tetanus</mat-label>
-      <input matInput readonly="true" value="{{patient.urgentInfo.tetanus.toString()}}">
+      <input matInput readonly="true" value="{{patient.urgentInfo.tetanus.toLocaleDateString()}}">
     </mat-form-field>
   </div>
 </div>

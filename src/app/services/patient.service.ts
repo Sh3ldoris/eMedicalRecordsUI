@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Insurance, Patient, Person, UrgentInfo} from "../objects/patient.config";
+import {Insurance, Patient, UrgentInfo} from "../objects/patient.config";
 import {PersonService} from "./person.service";
+import {HttpClient} from "@angular/common/http";
+import { map } from 'rxjs/operators';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +41,7 @@ export class PatientService {
     {
       insuranceCode : '499013232'
     },
-  ]
+  ];
 
   private patients: Patient[] = [
     {
@@ -69,17 +72,18 @@ export class PatientService {
         '5ZY0153'
       ]
     },
-  ]
+  ];
 
-  constructor(private personService: PersonService) { }
-
-  public getAllPatient(): Patient[] {
-      return this.patients;
+  constructor(private personService: PersonService,
+              private http: HttpClient) {
   }
 
-  public getAllPatientByDoctor(personalNumber: string): Patient[] {
-    console.log(personalNumber);
-    return this.patients.filter(p => p.canAccess && p.canAccess.includes(personalNumber));
+  public getAllPatient(): Observable<Patient[]> {
+      return this.getAllMockedPatients();
+  }
+
+  public getAllPatientByDoctor(personalNumber: string): Observable<Patient[]> {
+    return this.getMockedPatientsByDoctor(personalNumber);
   }
 
   public getPatientsByFilter(
@@ -98,4 +102,32 @@ export class PatientService {
         p.person.address?.toLocaleLowerCase().includes(filter.address.toLocaleLowerCase())
     );
   };
+
+
+  private getAllMockedPatients(): Observable<Patient[]> {
+    return this.http.get('/mocks/get-patients.json')
+      .pipe(map((response: any) => response))
+      .pipe(map((result: Patient[]) => {
+          result.forEach(p => {
+            p.person.birthDate = new Date(p.person.birthDate);
+            p.urgentInfo.tetanus = new Date(p.urgentInfo.tetanus);
+          });
+          return result;
+        }
+      ));
+  }
+
+  private getMockedPatientsByDoctor(personalNumber: string): Observable<Patient[]> {
+    return this.http.get('/mocks/get-patients.json')
+      .pipe(map((response: any) => response))
+      .pipe(map((result: Patient[]) => {
+          result = result.filter(p => p.canAccess && p.canAccess.includes(personalNumber));
+          result.forEach(p => {
+            p.person.birthDate = new Date(p.person.birthDate);
+            p.urgentInfo.tetanus = new Date(p.urgentInfo.tetanus);
+          });
+          return result;
+        }
+      ));
+  }
 }

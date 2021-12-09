@@ -33,7 +33,8 @@ export class CanAccessPatientsComponent implements OnInit {
   }
 
   private loadData() {
-    this.patients = this.patientService.getAllPatientByDoctor(this.userService.getUser().personalNumber);
+    this.patientService.getAllPatientByDoctor(this.userService.getUser().personalNumber)
+      .subscribe((next: Patient[]) => {this.patients = next});
   }
 
 }

@@ -1,0 +1,102 @@
+[
+  {
+    "code": "SK019810",
+    "insurance": {
+      "insuranceCode": "499013232"
+    },
+    "person": {
+      "firstName": "Adam",
+      "lastName": "Lány",
+      "gender": "MALE",
+      "birthNumber": "981010/1423",
+      "birthName": "Lány",
+      "birthDate": "2021-12-09T15:22:09.559Z",
+      "address": "Zábrežná 203/8, Predaná",
+      "phone": "+421944911835",
+      "familyState": "Sloboný",
+      "occupation": "Študent"
+    },
+    "urgentInfo": {
+      "allergies": "Pele tráv, prach",
+      "otherRisks": "Príliš nebezpečný pre svoje okolie",
+      "permanentMedicals": "Antihistamiká",
+      "infections": "Závažná infekcia",
+      "organDonation": "Súhlas pre darovanie kostnej drene",
+      "height": 185,
+      "weight": 82,
+      "tetanus": "2021-12-09T15:22:09.559Z",
+      "transplantation": "Transplantovaná ľavá bradavka",
+      "bloodGroup": "B+"
+    },
+    "canAccess": [
+      "5ZY0153"
+    ]
+  },
+  {
+    "code": "SK019810",
+    "insurance": {
+      "insuranceCode": "499013232"
+    },
+    "person": {
+      "firstName": "Emil",
+      "lastName": "Báči",
+      "gender": "MALE",
+      "birthNumber": "961210/3514",
+      "birthName": "Báči",
+      "birthDate": "2021-12-09T15:22:09.559Z",
+      "address": "Potočná 400, Horná Dolná",
+      "phone": "+421944911835",
+      "familyState": "Sloboný",
+      "occupation": "Robotník, fajnšmeker"
+    },
+    "urgentInfo": {
+      "allergies": "Mlieko, lepok",
+      "otherRisks": "Príliš nebezpečný pre svoje okolie",
+      "permanentMedicals": "Antihistamiká",
+      "infections": "Zltacka",
+      "organDonation": "Súhlas pre darovanie kostnej drene",
+      "height": 180,
+      "weight": 92,
+      "tetanus": "2021-12-09T15:22:09.559Z",
+      "transplantation": "",
+      "bloodGroup": "0"
+    },
+    "canAccess": [
+      "5ZY0123"
+    ]
+  },
+  {
+    "code": "SK014858",
+    "insurance": {
+      "insuranceCode": "499013232"
+    },
+    "person": {
+      "firstName": "Emil",
+      "lastName": "Báči",
+      "gender": "MALE",
+      "birthNumber": "961210/3514",
+      "birthName": "Báči",
+      "birthDate": "2021-12-09T15:22:09.559Z",
+      "address": "Potočná 400, Horná Dolná",
+      "phone": "+421944911835",
+      "familyState": "Sloboný",
+      "occupation": "Robotník, fajnšmeker"
+    },
+    "urgentInfo": {
+      "allergies": "Mlieko, lepok",
+      "otherRisks": "Príliš nebezpečný pre svoje okolie",
+      "permanentMedicals": "Antihistamiká",
+      "infections": "Zltacka",
+      "organDonation": "Súhlas pre darovanie kostnej drene",
+      "height": 180,
+      "weight": 92,
+      "tetanus": "2021-12-09T15:22:09.559Z",
+      "transplantation": "",
+      "bloodGroup": "0"
+    },
+    "canAccess": [
+      "5ZY0123",
+      "5ZY0153"
+    ]
+  }
+]

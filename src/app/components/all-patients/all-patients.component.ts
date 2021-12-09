@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PatientService} from "../../services/patient.service";
 import {Patient} from "../../objects/patient.config";
-import {query} from "@angular/animations";
 
 @Component({
   selector: 'app-all-patients',
@@ -17,7 +16,6 @@ export class AllPatientsComponent implements OnInit {
   constructor(public patientService: PatientService) { }
 
   ngOnInit(): void {
-    console.log(this.filter);
     if (this.filter === null) {
       this.loadData();
     }
@@ -32,7 +30,6 @@ export class AllPatientsComponent implements OnInit {
   }
 
   private loadData() {
-    this.patients = this.patientService.getAllPatient();
+    this.patientService.getAllPatient().subscribe((next: Patient[]) => {this.patients = next});
   }
-
 }

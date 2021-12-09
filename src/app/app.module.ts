@@ -26,6 +26,7 @@ import { HealthRecordListComponent } from './components/health-record-list/healt
 import { HealthRecordDetailComponent } from './components/health-record-detail/health-record-detail.component';
 import { NewHealthRecordComponent } from './components/new-health-record/new-health-record.component';
 import { CanAccessPatientsComponent } from './components/can-access-patients/can-access-patients.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CanAccessPatientsComponent } from './components/can-access-patients/can
     HealthRecordDetailComponent,
     NewHealthRecordComponent,
     CanAccessPatientsComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

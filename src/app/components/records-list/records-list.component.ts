@@ -21,14 +21,11 @@ export class RecordsListComponent implements OnInit {
   ngOnInit(): void {}
 
   async openPatientCard(patient: Patient) {
-    this.sharedService.isLoadingContent = true;
-    //await new Promise(f => setTimeout(f, 700));
     this.sharedService.data = patient;
     this.router.navigate(['/patients/documentation']);
   }
 
   setStep(index: number) {
-    console.log('Cliiiiick!');
     this.step = index;
   }
 

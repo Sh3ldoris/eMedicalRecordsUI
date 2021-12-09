@@ -19,27 +19,6 @@ export class PatientDocumentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.patient = this.sharedService.data;
-    if (this.sharedService.isLoadingContent) {
-      this.sharedService.isLoadingContent = false;
-    }
-    /*const array : {id: string, value: string}[] =  [
-      {
-        id: 'name',
-        value: 'Adko'
-      },
-      {
-        id: 'position',
-        value: 'junior coder'
-      }
-    ];
-
-    let example: any = {};
-
-    array.forEach(item => {
-      example[item.id] = item.value;
-    });
-
-    console.log(example);*/
   }
 
   public onCloseReport(event: any) {

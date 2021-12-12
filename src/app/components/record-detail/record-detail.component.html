@@ -80,6 +80,12 @@
       <input matInput readonly="true" value="{{patient.urgentInfo.tetanus.toLocaleDateString()}}">
     </mat-form-field>
   </div>
+  <div *ngIf="patient.doctor" class="col">
+    <mat-form-field appearance="outline" class="read-only">
+      <mat-label>Ošetrujúci lekár</mat-label>
+      <input matInput readonly="true" value="{{patient.doctor.person.firstName + ' ' + patient.doctor.person.lastName + ' (' + patient.doctor.personalNumber + ')'}}">
+    </mat-form-field>
+  </div>
 </div>
 <div class="row">
   <div class="col col-md-6">

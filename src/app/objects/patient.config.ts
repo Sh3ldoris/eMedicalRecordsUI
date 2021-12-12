@@ -1,3 +1,5 @@
+import {Doctor} from "./user.config";
+
 export interface MedicalRecord {
     id: string
 }
@@ -7,6 +9,7 @@ export interface Patient {
   insurance: Insurance,
   person: Person,
   urgentInfo: UrgentInfo,
+  doctor?: Doctor,
   canAccess?: string[]
 }
 

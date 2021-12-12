@@ -28,6 +28,27 @@
       "transplantation": "Transplantovaná ľavá bradavka",
       "bloodGroup": "B+"
     },
+    "doctor": {
+      "personalNumber": "5ZY0123",
+      "password": "admin123",
+      "person": {
+        "firstName": "MUDr. Vladimír",
+        "lastName": "Kucko",
+        "gender": "MALE",
+        "birthNumber": "doctor/1",
+        "birthName": "",
+        "birthDate": "2021-12-09T15:22:09.559Z\"",
+        "address": "",
+        "phone": "",
+        "familyState": "",
+        "occupation": ""
+      },
+      "specification": "oftalmológ",
+      "ambulance": {
+        "name": "O Č N Á   A M B U L A N C I A",
+        "address": "ul. V. Spanyola 43, Žilina 010 01"
+      }
+    },
     "canAccess": [
       "5ZY0153"
     ]

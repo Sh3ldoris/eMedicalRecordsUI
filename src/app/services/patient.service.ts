@@ -92,20 +92,27 @@ export class PatientService {
       birthNumber: string,
       lastName: string,
       name: string
-  }): Patient[] {
-
-    return this.patients.filter(
-      p =>
-        p.person.birthNumber.includes(filter.birthNumber) &&
-        p.person.lastName.toLocaleLowerCase().includes(filter.lastName.toLocaleLowerCase()) &&
-        p.person.firstName.toLocaleLowerCase().includes(filter.name.toLocaleLowerCase()) &&
-        p.person.address?.toLocaleLowerCase().includes(filter.address.toLocaleLowerCase())
-    );
+  }): Observable<Patient[]> {
+    return this.http.get('/api/patients')
+      .pipe(map((response: any) => response))
+      .pipe(map((result: Patient[]) => {
+          result = result.filter(p =>
+            p.person.birthNumber.includes(filter.birthNumber) &&
+            p.person.lastName.toLocaleLowerCase().includes(filter.lastName.toLocaleLowerCase()) &&
+            p.person.firstName.toLocaleLowerCase().includes(filter.name.toLocaleLowerCase()) &&
+            p.person.address?.toLocaleLowerCase().includes(filter.address.toLocaleLowerCase()));
+          result.forEach(p => {
+            p.person.birthDate = new Date(p.person.birthDate);
+            p.urgentInfo.tetanus = new Date(p.urgentInfo.tetanus);
+          });
+          return result;
+        }
+      ));
   };
 
 
   private getAllMockedPatients(): Observable<Patient[]> {
-    return this.http.get('/mocks/get-patients.json')
+    return this.http.get('/api/patients')
       .pipe(map((response: any) => response))
       .pipe(map((result: Patient[]) => {
           result.forEach(p => {
@@ -118,7 +125,7 @@ export class PatientService {
   }
 
   private getMockedPatientsByDoctor(personalNumber: string): Observable<Patient[]> {
-    return this.http.get('/mocks/get-patients.json')
+    return this.http.get('/api/patients')
       .pipe(map((response: any) => response))
       .pipe(map((result: Patient[]) => {
           result = result.filter(p => p.canAccess && p.canAccess.includes(personalNumber));

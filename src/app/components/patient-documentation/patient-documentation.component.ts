@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Patient} from "../../objects/patient.config";
 import {SharedService} from "../../services/shared.service";
 import {HealthRecordService} from "../../services/health-record.service";
+import {HealthRecord} from "../../objects/health-record.config";
 
 @Component({
   selector: 'app-patient-documentation',
@@ -11,6 +12,7 @@ import {HealthRecordService} from "../../services/health-record.service";
 export class PatientDocumentationComponent implements OnInit {
 
   @Input() patient: Patient;
+  records: HealthRecord[] = [];
 
   isNewRecordFormOpen: boolean = false;
 
@@ -19,6 +21,7 @@ export class PatientDocumentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.patient = this.sharedService.data;
+    this.loadData();
   }
 
   public onCloseReport(event: any) {
@@ -27,6 +30,10 @@ export class PatientDocumentationComponent implements OnInit {
 
   openReportForm() {
     this.isNewRecordFormOpen = true;
+  }
+
+  loadData() {
+    this.recService.getAllRecordsByPatientCode(this.patient.code).subscribe((next: HealthRecord[]) => {this.records = next});
   }
 
 }

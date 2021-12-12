@@ -57,7 +57,6 @@ export class FilterComponent implements OnInit {
    */
   applyFilter(): void {
     const query = this.setQueryFromFields();
-    console.log(query);
     this.apply.emit(query);
   }
 

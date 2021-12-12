@@ -23,7 +23,7 @@ export class AllPatientsComponent implements OnInit {
 
   filterApplied(event: any) {
     if (event !== null) {
-      this.patients = this.patientService.getPatientsByFilter(event);
+      this.patientService.getPatientsByFilter(event).subscribe((next: Patient[]) => {this.patients = next});
     } else {
       this.loadData();
     }

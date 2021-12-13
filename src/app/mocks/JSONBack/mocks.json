@@ -1,181 +1,209 @@
 {
-	"patients": [
-	  {
-		"code": "SK019810",
-		"insurance": {
-		  "insuranceCode": "499013232"
-		},
-		"person": {
-		  "firstName": "Adam",
-		  "lastName": "Lány",
-		  "gender": "MALE",
-		  "birthNumber": "981010/1423",
-		  "birthName": "Lány",
-		  "birthDate": "2021-12-09T15:22:09.559Z",
-		  "address": "Zábrežná 203/8, Predaná",
-		  "phone": "+421944911835",
-		  "familyState": "Sloboný",
-		  "occupation": "Študent"
-		},
-		"urgentInfo": {
-		  "allergies": "Pele tráv, prach",
-		  "otherRisks": "Príliš nebezpečný pre svoje okolie",
-		  "permanentMedicals": "Antihistamiká",
-		  "infections": "Závažná infekcia",
-		  "organDonation": "Súhlas pre darovanie kostnej drene",
-		  "height": 185,
-		  "weight": 82,
-		  "tetanus": "2021-12-09T15:22:09.559Z",
-		  "transplantation": "Transplantovaná ľavá bradavka",
-		  "bloodGroup": "B+"
-		},
-		"doctor": {
-		  "personalNumber": "5ZY0123",
-		  "password": "admin123",
-		  "person": {
-			"firstName": "MUDr. Vladimír",
-			"lastName": "Kucko",
-			"gender": "MALE",
-			"birthNumber": "doctor/1",
-			"birthName": "",
-			"birthDate": "2021-12-09T15:22:09.559Z",
-			"address": "",
-			"phone": "",
-			"familyState": "",
-			"occupation": ""
-		  },
-		  "specification": "oftalmológ",
-		  "ambulance": {
-			"name": "O Č N Á   A M B U L A N C I A",
-			"address": "ul. V. Spanyola 43, Žilina 010 01"
-		  }
-		},
-		"canAccess": [
-		  "5ZY0153"
-		]
-	  },
-	  {
-		"code": "SK019810",
-		"insurance": {
-		  "insuranceCode": "499013232"
-		},
-		"person": {
-		  "firstName": "Emil",
-		  "lastName": "Báči",
-		  "gender": "MALE",
-		  "birthNumber": "961210/3514",
-		  "birthName": "Báči",
-		  "birthDate": "2021-12-09T15:22:09.559Z",
-		  "address": "Potočná 400, Horná Dolná",
-		  "phone": "+421944911835",
-		  "familyState": "Sloboný",
-		  "occupation": "Robotník, fajnšmeker"
-		},
-		"urgentInfo": {
-		  "allergies": "Mlieko, lepok",
-		  "otherRisks": "Príliš nebezpečný pre svoje okolie",
-		  "permanentMedicals": "Antihistamiká",
-		  "infections": "Zltacka",
-		  "organDonation": "Súhlas pre darovanie kostnej drene",
-		  "height": 180,
-		  "weight": 92,
-		  "tetanus": "2021-12-09T15:22:09.559Z",
-		  "transplantation": "",
-		  "bloodGroup": "0"
-		},
-		"canAccess": [
-		  "5ZY0123"
-		]
-	  },
-	  {
-		"code": "SK014858",
-		"insurance": {
-		  "insuranceCode": "499013232"
-		},
-		"person": {
-		  "firstName": "Emil",
-		  "lastName": "Báči",
-		  "gender": "MALE",
-		  "birthNumber": "961210/3514",
-		  "birthName": "Báči",
-		  "birthDate": "2021-12-09T15:22:09.559Z",
-		  "address": "Potočná 400, Horná Dolná",
-		  "phone": "+421944911835",
-		  "familyState": "Sloboný",
-		  "occupation": "Robotník, fajnšmeker"
-		},
-		"urgentInfo": {
-		  "allergies": "Mlieko, lepok",
-		  "otherRisks": "Príliš nebezpečný pre svoje okolie",
-		  "permanentMedicals": "Antihistamiká",
-		  "infections": "Zltacka",
-		  "organDonation": "Súhlas pre darovanie kostnej drene",
-		  "height": 180,
-		  "weight": 92,
-		  "tetanus": "2021-12-09T15:22:09.559Z",
-		  "transplantation": "",
-		  "bloodGroup": "0"
-		},
-		"canAccess": [
-		  "5ZY0123",
-		  "5ZY0153"
-		]
-	  }
-	],
-	"records": [
-		{
-		 "patientCode": "SK019810",
-		 "date": "2021-12-09T15:22:09.559Z",
-		 "title": "Obvodná prehliadka 2021",
-		 "doctor": {
-			  "personalNumber": "5ZY0123",
-			  "password": "admin123",
-			  "person": {
-				"firstName": "MUDr. Vladimír",
-				"lastName": "Kucko",
-				"gender": "MALE",
-				"birthNumber": "doctor/1",
-				"birthName": "",
-				"birthDate": "2021-12-09T15:22:09.559Z",
-				"address": "",
-				"phone": "",
-				"familyState": "",
-				"occupation": ""
-			  },
-			  "specification": "oftalmológ",
-			  "ambulance": {
-				"name": "O Č N Á   A M B U L A N C I A",
-				"address": "ul. V. Spanyola 43, Žilina 010 01"
-			  }
-		 },
-		 "report": "Vsetko v norme, podla ocakavani, nic nezvucajne nenajdene"
-		},
-		{
-		 "patientCode": "SK019810",
-		 "date": "2021-12-09T15:22:09.559Z",
-		 "title": "Krvne odbery pre potreby nastupenia do prace",
-		 "doctor": {
-			  "personalNumber": "5ZY0123",
-			  "password": "admin123",
-			  "person": {
-				"firstName": "MUDr. Vladimír",
-				"lastName": "Kucko",
-				"gender": "MALE",
-				"birthNumber": "doctor/1",
-				"birthName": "",
-				"birthDate": "2021-12-09T15:22:09.559Z",
-				"address": "",
-				"phone": "",
-				"familyState": "",
-				"occupation": ""
-			  },
-			  "specification": "oftalmológ",
-			  "ambulance": {
-				"name": "O Č N Á   A M B U L A N C I A",
-				"address": "ul. V. Spanyola 43, Žilina 010 01"
-			  }
-		 },
-		 "report": "Pacietovi bola odobrata krvna vzorka, ktora bola odoslana na testy"
-		}
-	]
+  "patients": [
+    {
+      "code": "SK019810",
+      "insurance": {
+        "insuranceCode": "499013232"
+      },
+      "person": {
+        "firstName": "Adam",
+        "lastName": "Lány",
+        "gender": "MALE",
+        "birthNumber": "981010/1423",
+        "birthName": "Lány",
+        "birthDate": "2021-12-09T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": "+421944911835",
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "Príliš nebezpečný pre svoje okolie",
+        "permanentMedicals": "Antihistamiká",
+        "infections": "Závažná infekcia",
+        "organDonation": "Súhlas pre darovanie kostnej drene",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "2021-12-09T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá bradavka",
+        "bloodGroup": "B+"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ]
+    },
+    {
+      "code": "SK019810",
+      "insurance": {
+        "insuranceCode": "499013232"
+      },
+      "person": {
+        "firstName": "Emil",
+        "lastName": "Báči",
+        "gender": "MALE",
+        "birthNumber": "961210/3514",
+        "birthName": "Báči",
+        "birthDate": "2021-12-09T15:22:09.559Z",
+        "address": "Potočná 400, Horná Dolná",
+        "phone": "+421944911835",
+        "familyState": "Sloboný",
+        "occupation": "Robotník, fajnšmeker"
+      },
+      "urgentInfo": {
+        "allergies": "Mlieko, lepok",
+        "otherRisks": "Príliš nebezpečný pre svoje okolie",
+        "permanentMedicals": "Antihistamiká",
+        "infections": "Zltacka",
+        "organDonation": "Súhlas pre darovanie kostnej drene",
+        "height": 180,
+        "weight": 92,
+        "tetanus": "2021-12-09T15:22:09.559Z",
+        "transplantation": "",
+        "bloodGroup": "0"
+      },
+      "canAccess": [
+        "5ZY0123"
+      ]
+    },
+    {
+      "code": "SK014858",
+      "insurance": {
+        "insuranceCode": "499013232"
+      },
+      "person": {
+        "firstName": "Jozef",
+        "lastName": "Skutočný",
+        "gender": "MALE",
+        "birthNumber": "960000/3514",
+        "birthName": "Báči",
+        "birthDate": "2021-12-09T15:22:09.559Z",
+        "address": "Potočná 400, Horná Dolná",
+        "phone": "+421944911835",
+        "familyState": "Sloboný",
+        "occupation": "Robotník, fajnšmeker"
+      },
+      "urgentInfo": {
+        "allergies": "Mlieko, lepok",
+        "otherRisks": "Príliš nebezpečný pre svoje okolie",
+        "permanentMedicals": "Antihistamiká",
+        "infections": "Zltacka",
+        "organDonation": "Súhlas pre darovanie kostnej drene",
+        "height": 180,
+        "weight": 92,
+        "tetanus": "2021-12-09T15:22:09.559Z",
+        "transplantation": "",
+        "bloodGroup": "0"
+      },
+      "canAccess": [
+        "5ZY0123",
+        "5ZY0153"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "patientCode": "SK019810",
+      "date": "2021-12-09T15:22:09.559Z",
+      "title": "Obvodná prehliadka 2021",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Vsetko v norme, podla ocakavani, nic nezvucajne nenajdene"
+    },
+    {
+      "patientCode": "SK019810",
+      "date": "2021-12-09T15:22:09.559Z",
+      "title": "Krvne odbery pre potreby nastupenia do prace",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Pacietovi bola odobrata krvna vzorka, ktora bola odoslana na testy"
+    },
+    {
+      "patientCode": "SK014858",
+      "date": "2021-12-13T10:14:54.010Z",
+      "title": "ssdfs",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-13T10:14:41.598Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "sfsd",
+      "id": "74dbc609-e762-4b1b-8829-426c1a93cde0"
+    }
+  ]
 }

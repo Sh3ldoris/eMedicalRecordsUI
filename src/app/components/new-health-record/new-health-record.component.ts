@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {Console} from "inspector";
 import {HealthRecordService} from "../../services/health-record.service";
 import {UserService} from "../../services/user.service";
 import {DoctorService} from "../../services/doctor.service";
@@ -46,8 +45,11 @@ export class NewHealthRecordComponent implements OnInit {
       doctor: this.doctor,
       report: this.reportForm.get('report')?.value
     };
-    console.log(newRecord);
-    this.close.emit(this.recordService.addNewRecord(newRecord));
+    this.recordService.addNewRecord(newRecord).subscribe(
+      (data: any) => {
+        this.close.emit(true);
+      }
+    );
   }
 
 }

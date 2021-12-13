@@ -25,7 +25,11 @@ export class PatientDocumentationComponent implements OnInit {
   }
 
   public onCloseReport(event: any) {
+    console.log('event -> ' + event);
     this.isNewRecordFormOpen = false;
+    if (event === true) {
+      this.loadData();
+    }
   }
 
   openReportForm() {

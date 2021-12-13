@@ -55,7 +55,7 @@
       ]
     },
     {
-      "code": "SK019810",
+      "code": "SK019811",
       "insurance": {
         "insuranceCode": "499013232"
       },
@@ -124,7 +124,7 @@
   ],
   "records": [
     {
-      "patientCode": "SK019810",
+      "patientCode": "SK019811",
       "date": "2021-12-09T15:22:09.559Z",
       "title": "Obvodná prehliadka 2021",
       "doctor": {
@@ -151,7 +151,7 @@
       "report": "Vsetko v norme, podla ocakavani, nic nezvucajne nenajdene"
     },
     {
-      "patientCode": "SK019810",
+      "patientCode": "SK019811",
       "date": "2021-12-09T15:22:09.559Z",
       "title": "Krvne odbery pre potreby nastupenia do prace",
       "doctor": {

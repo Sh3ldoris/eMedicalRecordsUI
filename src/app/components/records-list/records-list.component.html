@@ -4,7 +4,7 @@
       <mat-accordion class="example-headers-align">
         <mat-expansion-panel hideToggle
             [expanded]="step === i"
-            (opened)="setStep(i)"
+            (opened)="setStep(i)" (closed)="setStep(-1)"
             class="mb-1 small-shadow">
           <mat-expansion-panel-header>
             <div class="row">

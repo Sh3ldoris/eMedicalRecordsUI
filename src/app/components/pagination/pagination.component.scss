@@ -1,0 +1,11 @@
+a {
+  color: #6c88a3;
+  border-radius: 7px;
+  font-size: 1rem;
+  letter-spacing: .05rem;
+}
+
+a.active {
+  background: var(--main-color-full);
+  color: #ffffff;
+}

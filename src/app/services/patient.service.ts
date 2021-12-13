@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class PatientService {
 
-  private urgentInfo: UrgentInfo[] = [
+  /*private urgentInfo: UrgentInfo[] = [
     {
       allergies: 'Pele tráv, prach',
       otherRisks: 'Príliš nebezpečný pre svoje okolie',
@@ -72,7 +72,7 @@ export class PatientService {
         '5ZY0153'
       ]
     },
-  ];
+  ];*/
 
   constructor(private personService: PersonService,
               private http: HttpClient) {
@@ -110,6 +110,9 @@ export class PatientService {
       ));
   };
 
+  public getPatientByCode(code: string): Observable<Patient> {
+    return this.getMockedPatientByCode(code);
+  }
 
   private getAllMockedPatients(): Observable<Patient[]> {
     return this.http.get('/api/patients')
@@ -137,4 +140,17 @@ export class PatientService {
         }
       ));
   }
+
+  private getMockedPatientByCode(code: string): Observable<Patient> {
+      return this.http.get('/api/patients?code=' + code)
+        .pipe(map((response: any) => response[0]))
+        .pipe(map((result: Patient) => {
+          console.log(result);
+          result.person.birthDate = new Date(result.person.birthDate);
+          result.urgentInfo.tetanus = new Date(result.urgentInfo.tetanus);
+          return result;
+        }
+      ));
+  }
+
 }

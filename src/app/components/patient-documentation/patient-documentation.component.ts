@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Patient} from "../../objects/patient.config";
-import {SharedService} from "../../services/shared.service";
 import {HealthRecordService} from "../../services/health-record.service";
 import {HealthRecord} from "../../objects/health-record.config";
+import {ActivatedRoute} from "@angular/router";
+import {PatientService} from "../../services/patient.service";
 
 @Component({
   selector: 'app-patient-documentation',
@@ -16,16 +17,21 @@ export class PatientDocumentationComponent implements OnInit {
 
   isNewRecordFormOpen: boolean = false;
 
-  constructor(private sharedService: SharedService,
-              public recService: HealthRecordService) { }
+  constructor(public recService: HealthRecordService,
+              private patientService: PatientService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.patient = this.sharedService.data;
-    this.loadData();
+    const code = this.route.snapshot.paramMap.get('id') || '';
+    this.patientService.getPatientByCode(code).subscribe(
+      (p: Patient) => {
+        this.patient = p;
+        this.loadData();
+      }
+    );
   }
 
   public onCloseReport(event: any) {
-    console.log('event -> ' + event);
     this.isNewRecordFormOpen = false;
     if (event === true) {
       this.loadData();

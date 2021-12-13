@@ -25,7 +25,7 @@ export class RecordsListComponent implements OnInit {
   openPatientCard(patient: Patient) {
     if (patient.canAccess?.includes(this.userService.getUser().personalNumber)) {
       this.sharedService.data = patient;
-      this.router.navigate(['/patients/documentation']);
+      this.router.navigate(['/patients/documentation/' + patient.code]);
     } else {
       console.error('YOu have no permission for this patient!');
     }
@@ -33,6 +33,7 @@ export class RecordsListComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
+    console.log('STEP -> ' + this.step);
   }
 
 }

@@ -27,6 +27,8 @@ import { HealthRecordDetailComponent } from './components/health-record-detail/h
 import { NewHealthRecordComponent } from './components/new-health-record/new-health-record.component';
 import { CanAccessPatientsComponent } from './components/can-access-patients/can-access-patients.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { BlockUIModule } from 'ng-block-ui';
+import { BlockUIHttpModule } from 'ng-block-ui/http';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MatInputModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    BlockUIModule.forRoot(),
+    BlockUIHttpModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

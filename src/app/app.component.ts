@@ -1,7 +1,6 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {SharedService} from "./services/shared.service";
 import {Router} from "@angular/router";
-import {UserService} from "./services/user.service";
 import {AuthService} from "./services/auth.service";
 
 @Component({
@@ -19,6 +18,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.hideNavigationBar = this.sharedService.isWithOutNavigationBar();
+
     if (!this.auth.isLogIn()) {
       this.router.navigate(['/sign-in']);
     }

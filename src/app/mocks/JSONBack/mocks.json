@@ -204,6 +204,34 @@
       },
       "report": "sfsd",
       "id": "74dbc609-e762-4b1b-8829-426c1a93cde0"
+    },
+    {
+      "patientCode": "SK019811",
+      "date": "2021-12-13T13:05:31.488Z",
+      "title": "dada",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-13T13:05:10.473Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "asasdasdas",
+      "id": "3ddecdac-2b8e-4aba-b00e-fa32b311f716"
     }
   ]
 }

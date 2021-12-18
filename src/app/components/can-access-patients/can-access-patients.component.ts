@@ -18,7 +18,6 @@ export class CanAccessPatientsComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit(): void {
-    console.log(this.filter);
     if (this.filter === null) {
       this.loadData();
     }

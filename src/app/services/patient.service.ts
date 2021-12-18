@@ -145,7 +145,6 @@ export class PatientService {
       return this.http.get('/api/patients?code=' + code)
         .pipe(map((response: any) => response[0]))
         .pipe(map((result: Patient) => {
-          console.log(result);
           result.person.birthDate = new Date(result.person.birthDate);
           result.urgentInfo.tetanus = new Date(result.urgentInfo.tetanus);
           return result;

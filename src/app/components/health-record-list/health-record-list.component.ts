@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {HealthRecord} from "../../objects/health-record.config";
 
 @Component({
@@ -6,7 +6,7 @@ import {HealthRecord} from "../../objects/health-record.config";
   templateUrl: './health-record-list.component.html',
   styleUrls: ['./health-record-list.component.scss']
 })
-export class HealthRecordListComponent implements OnInit {
+export class HealthRecordListComponent implements OnInit, OnChanges {
 
   @Input() records: HealthRecord[] = [];
 
@@ -19,6 +19,10 @@ export class HealthRecordListComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.step = -1;
   }
 
 }

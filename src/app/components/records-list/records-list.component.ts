@@ -27,13 +27,12 @@ export class RecordsListComponent implements OnInit {
       this.sharedService.data = patient;
       this.router.navigate(['/patients/documentation/' + patient.code]);
     } else {
-      console.error('YOu have no permission for this patient!');
+      console.error('You have no permission for this patient!');
     }
   }
 
   setStep(index: number) {
     this.step = index;
-    console.log('STEP -> ' + this.step);
   }
 
 }

@@ -16,6 +16,7 @@ export class PatientDocumentationComponent implements OnInit {
   records: HealthRecord[] = [];
 
   isNewRecordFormOpen: boolean = false;
+  isInfoOpen: boolean = true;
 
   constructor(public recService: HealthRecordService,
               private patientService: PatientService,
@@ -46,4 +47,8 @@ export class PatientDocumentationComponent implements OnInit {
     this.recService.getAllRecordsByPatientCode(this.patient.code).subscribe((next: HealthRecord[]) => {this.records = next});
   }
 
+  openInfo() {
+    console.log('Hej')
+    this.isInfoOpen = !this.isInfoOpen;
+  }
 }

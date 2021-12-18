@@ -1,6 +1,6 @@
 <div class="pt-2">
-  <div class="patient-info px-4 pt-3 pb-3 shadow-sm">
-    <div *ngIf="this.patient" class="row">
+  <div class="patient-info shadow-sm" style="border-top-left-radius: 7px; border-top-right-radius: 7px;">
+    <div *ngIf="this.patient" class="row px-4 py-3">
       <div class="col-12">
         <div class="row g-0">
           <div class="col-auto d-none d-xl-block" style="padding-right: 1.5rem">
@@ -74,13 +74,19 @@
           </div>
           <div class="col d-flex flex-column position-static">
             <div class="d-flex justify-content-end align-items-center h-100">
-              <button type="submit" class="btn btn-sm basic h-100">
-                Pridať anamnézu
+              <button (click)="openInfo()" type="submit" class="btn btn-sm basic h-100">
+                Ďalšie informácie
               </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <hr *ngIf="isInfoOpen" class="m-0 p-0"/>
+  </div>
+  <div *ngIf="isInfoOpen" class="patient-info shadow-sm" style="border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+    <div class="row px-4 py-3">
+      <p class="">Anamnéza</p>
     </div>
   </div>
 </div>

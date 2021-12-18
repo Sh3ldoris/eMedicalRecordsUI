@@ -68,11 +68,11 @@
         "birthDate": "2021-12-09T15:22:09.559Z",
         "address": "Potočná 400, Horná Dolná",
         "phone": "+421944911835",
-        "familyState": "Sloboný",
-        "occupation": "Robotník, fajnšmeker"
+        "familyState": "Zenaty",
+        "occupation": "Robotník, fajnšmeker, nadsenec"
       },
       "urgentInfo": {
-        "allergies": "Mlieko, lepok",
+        "allergies": "Mlieko, lepok, macky",
         "otherRisks": "Príliš nebezpečný pre svoje okolie",
         "permanentMedicals": "Antihistamiká",
         "infections": "Zltacka",
@@ -85,7 +85,16 @@
       },
       "canAccess": [
         "5ZY0123"
-      ]
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "",
+        "abuses": "",
+        "physiologicalFunctions": "",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     },
     {
       "code": "SK014858",
@@ -95,7 +104,7 @@
       "person": {
         "firstName": "Jozef",
         "lastName": "Skutočný",
-        "gender": "MALE",
+        "gender": "FEMALE",
         "birthNumber": "960000/3514",
         "birthName": "Báči",
         "birthDate": "2021-12-09T15:22:09.559Z",

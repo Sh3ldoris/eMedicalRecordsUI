@@ -9,6 +9,7 @@ export interface Patient {
   insurance: Insurance,
   person: Person,
   urgentInfo: UrgentInfo,
+  anamnesis?: Anamnesis,
   doctor?: Doctor,
   canAccess?: string[]
 }
@@ -39,6 +40,17 @@ export interface UrgentInfo {
   tetanus: Date,
   transplantation: string,
   bloodGroup: string
+}
+
+export interface Anamnesis {
+  currentDiseases: string,
+  previousPeriod: string,
+  pharmacologyHistory: string,
+  abuses: string,
+  physiologicalFunctions: string,
+  gynecologicalHistory: string,
+
+  familyAnamnesis: string
 }
 
 export interface Insurance {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Insurance, Patient, UrgentInfo} from "../objects/patient.config";
 import {PersonService} from "./person.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import {Observable} from "rxjs";
 
@@ -112,6 +112,12 @@ export class PatientService {
 
   public getPatientByCode(code: string): Observable<Patient> {
     return this.getMockedPatientByCode(code);
+  }
+
+  public updatePatient(patient: Patient): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put('/api/patients/' + patient.code, patient, {headers: headers})
+      .pipe(map((response: any) => response));
   }
 
   private getAllMockedPatients(): Observable<Patient[]> {

@@ -1,5 +1,5 @@
 <div class="pt-2">
-  <div class="patient-info shadow-sm" style="border-top-left-radius: 7px; border-top-right-radius: 7px;">
+  <div class="patient-info shadow-sm" [ngClass]="!isInfoOpen ? 'rounded-all': 'rounded-top'">
     <div *ngIf="this.patient" class="row px-4 py-3">
       <div class="col-12">
         <div class="row g-0">
@@ -74,8 +74,15 @@
           </div>
           <div class="col d-flex flex-column position-static">
             <div class="d-flex justify-content-end align-items-center h-100">
-              <button (click)="openInfo()" type="submit" class="btn btn-sm basic h-100">
-                Ďalšie informácie
+              <button *ngIf="isInfoOpen"
+                      class="btn btn-sm basic h-100"
+                      type="submit"
+                      (click)="editAnamnesis()"
+                      style="margin-right: 0.5rem">
+                 {{!isEditing ? 'Upraviť anamnézu': 'Uložiť zmeny'}}
+              </button>
+              <button (click)="openInfo()" type="submit" class="btn btn-sm h-100" [ngClass]="!isInfoOpen ? 'basic' : 'reset'">
+                {{!isInfoOpen ? 'Zobraziť anamnézu': 'Zavrieť anamnézu'}}
               </button>
             </div>
           </div>
@@ -86,7 +93,131 @@
   </div>
   <div *ngIf="isInfoOpen" class="patient-info shadow-sm" style="border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
     <div class="row px-4 py-3">
-      <p class="">Anamnéza</p>
+      <p class="">Anamnéza - osobná</p>
+      <div class="col-12">
+          <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+            <mat-label>Terajšie ochorenia</mat-label>
+            <textarea matInput
+                      cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="6"
+                      cdkTextareaAutosize="true"
+                      readonly="{{!isEditing}}"
+                      [(ngModel)]="this.anamnesis.currentDiseases">
+          </textarea>
+          </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Predchádzajúce obdobie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.previousPeriod">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Farmakologická anamnéza</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.pharmacologyHistory">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Alergie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.alergies">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Abúzy</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.abuses">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Fyziologické funkcie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.physiologicalFunctions">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6" *ngIf="patient.person.gender === 'FEMALE'">
+        <mat-form-field appearance="outline" class="read-only">
+          <mat-label>Gynekologická anamnéza</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.gynecologicalHistory">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <hr/>
+      <p class="">Anamnéza - rodinná</p>
+      <div class="col-12">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Rodinná anamnéza</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.anamnesis.familyAnamnesis">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <hr/>
+      <p class="">Anamnéza - ostatné</p>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Pracovná anamnéza</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.occupation">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" [ngClass]="{'read-only': !isEditing}">
+          <mat-label>Sociálna anamnéza</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+                    readonly="{{!isEditing}}"
+                    [(ngModel)]="this.familyState">
+          </textarea>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 </div>

@@ -29,6 +29,7 @@ import { CanAccessPatientsComponent } from './components/can-access-patients/can
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { BlockUIHttpModule } from 'ng-block-ui/http';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { BlockUIHttpModule } from 'ng-block-ui/http';
     MatProgressSpinnerModule,
     BlockUIModule.forRoot(),
     BlockUIHttpModule.forRoot(),
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

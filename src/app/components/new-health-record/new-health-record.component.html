@@ -32,6 +32,60 @@
         </mat-form-field>
       </div>
     </div>
+    <p style="margin-top: 0!important;">Diagnózy</p>
+
+    <div class="row">
+      <div class="col-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Kód diagnózy</mat-label>
+          <input matInput formControlName="code">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field appearance="outline">
+          <mat-label>Lokalizácia diagnózy</mat-label>
+          <input matInput formControlName="localization">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <div class="row flex-md-nowrap m-0">
+          <mat-form-field appearance="outline" class="col-auto">
+            <mat-label>Názov diagnózy</mat-label>
+            <input matInput formControlName="diagnosisName">
+          </mat-form-field>
+          <button (click)="$event.preventDefault(); addNewDiagnosis();" class="btn basic col-auto" style="">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pb-4">
+      <div class="col-12">
+        <div class="example-container mat-elevation-z8">
+          <table mat-table [dataSource]="assignedDiagnosis">
+
+            <ng-container matColumnDef="code">
+              <th mat-header-cell *matHeaderCellDef>Kód</th>
+              <td mat-cell *matCellDef="let element"> {{element.diagnosis.code}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="localization">
+              <th mat-header-cell *matHeaderCellDef>Lokalizácia</th>
+              <td mat-cell *matCellDef="let element"> {{element.localization}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="diagnosisName">
+              <th mat-header-cell *matHeaderCellDef>Názov</th>
+              <td mat-cell *matCellDef="let element"> {{element.diagnosis.name}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <div class="col-12 d-flex justify-content-end">
       <div class="row flex-md-nowrap m-0">

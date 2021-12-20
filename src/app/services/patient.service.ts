@@ -114,10 +114,15 @@ export class PatientService {
     return this.getMockedPatientByCode(code);
   }
 
-  public updatePatient(patient: Patient): Observable<any> {
+  public updatePatient(patient: Patient): Observable<Patient> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put('/api/patients/' + patient.code, patient, {headers: headers})
-      .pipe(map((response: any) => response));
+      .pipe(map((response: any) => response))
+      .pipe(map((result: Patient) => {
+        result.person.birthDate = new Date(result.person.birthDate);
+        result.urgentInfo.tetanus = new Date(result.urgentInfo.tetanus);
+        return result;
+      }));
   }
 
   private getAllMockedPatients(): Observable<Patient[]> {

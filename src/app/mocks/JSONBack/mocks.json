@@ -90,7 +90,7 @@
         "currentDiseases": "",
         "previousPeriod": "",
         "pharmacologyHistory": "",
-        "abuses": "",
+        "abuses": "Nadmerny prijem kofeinu",
         "physiologicalFunctions": "",
         "gynecologicalHistory": "",
         "familyAnamnesis": ""
@@ -157,7 +157,16 @@
           "address": "ul. V. Spanyola 43, Žilina 010 01"
         }
       },
-      "report": "Vsetko v norme, podla ocakavani, nic nezvucajne nenajdene"
+      "report": "Vsetko v norme, podla ocakavani, nic nezvucajne nenajdene",
+      "diagnosis": [
+        {
+          "localization": "",
+          "diagnosis": {
+            "code": "A001",
+            "name": "Brušný týfus a paratýfusy"
+          }
+        }
+      ]
     },
     {
       "patientCode": "SK019811",
@@ -185,6 +194,99 @@
         }
       },
       "report": "Pacietovi bola odobrata krvna vzorka, ktora bola odoslana na testy"
+    },
+    {
+      "patientCode": "SK019811",
+      "date": "2021-12-18T23:08:18.123Z",
+      "title": "jes",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-18T23:08:10.097Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "sdfsdfsdfsd",
+      "code": "229af05f-9331-4a55-b207-3420fc9ddba5"
+    },
+    {
+      "patientCode": "SK019811",
+      "date": "2021-12-19T22:16:24.005Z",
+      "title": null,
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-19T22:16:21.434Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": null,
+      "code": "5cf8e578-9928-47ac-bf47-2d791e45f903"
+    },
+    {
+      "patientCode": "SK019811",
+      "date": "2021-12-20T21:23:41.637Z",
+      "title": "Testovacia sprava",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-20T21:23:03.506Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Najdene",
+      "diagnosis": [
+        {
+          "localization": "Telo",
+          "diagnosis": {
+            "code": "A001",
+            "name": "Brusny tyfus"
+          }
+        }
+      ],
+      "code": "00b1a611-de08-4129-bd17-c6db47874d3a"
     }
   ]
 }

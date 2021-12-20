@@ -67,7 +67,9 @@
   color: rgba(0,0,0,.6);
 }
 
-
+::ng-deep .mat-header-cell {
+  top: -10px!important;
+}
 
 ::ng-deep .mat-expansion-panel-header .mat-content {
   display: block!important;

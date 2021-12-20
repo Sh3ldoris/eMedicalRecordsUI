@@ -62,8 +62,8 @@ export class PatientDocumentationComponent implements OnInit {
       this.patient.person.familyState = this.familyState;
       this.patientService.updatePatient(this.patient).subscribe(
         res => {
-          this.loadPatient();
-          this.isInfoOpen = false;
+          this.patient = res;
+          this.resetAnamnesis();
         }
       );
     }

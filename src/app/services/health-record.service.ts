@@ -54,7 +54,7 @@ export class HealthRecordService {
 
   private addMockedRecord(record: HealthRecord): Observable<any> {
     let data: any = record;
-    data['id'] = uuid();
+    data['code'] = uuid();
     return this.http.post('/api/records', data);
   }
 

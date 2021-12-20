@@ -1,17 +1,11 @@
 import {Doctor} from "./user.config";
-
-// export interface HealthRecord {
-//   date: Date,
-//   title: string,
-//   doctor: string,
-//   ambulance: string,
-//   record: string
-// }
+import {AssignedDiagnosis} from "./diagnosis.config";
 
 export interface HealthRecord {
   patientCode: string,
   date: Date,
   title: string,
   doctor: Doctor,
-  report: string
+  report: string,
+  diagnosis?: AssignedDiagnosis[]
 }

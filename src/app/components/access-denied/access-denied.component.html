@@ -1,0 +1,12 @@
+<mat-dialog-content class="mat-typography">
+<p>Bez prístupu!</p>
+  <div class="row">
+    <div class="col-12">
+      Je nám ľúto, ale ku tomuto pacientovi, žiaľ nemáte prístup.
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!--<button mat-dialog-close class="btn basic d-inline-block col-auto close">Cancel</button>-->
+  <button [mat-dialog-close]="true" class="btn basic d-inline-block col-auto" cdkFocusInitial>Okej</button>
+</mat-dialog-actions>

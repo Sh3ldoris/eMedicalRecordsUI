@@ -33,6 +33,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     NewHealthRecordComponent,
     CanAccessPatientsComponent,
     PaginationComponent,
+    AccessDeniedComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,8 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MatTableModule,
     MatAutocompleteModule,
     MatSelectModule,
-    NgxMatSelectSearchModule
+    NgxMatSelectSearchModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

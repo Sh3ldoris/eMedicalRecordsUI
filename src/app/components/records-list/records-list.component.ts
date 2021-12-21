@@ -4,6 +4,8 @@ import {PatientService} from "../../services/patient.service";
 import {Router} from "@angular/router";
 import {SharedService} from "../../services/shared.service";
 import {UserService} from "../../services/user.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AccessDeniedComponent} from "../access-denied/access-denied.component";
 
 @Component({
   selector: 'app-records-list',
@@ -18,7 +20,8 @@ export class RecordsListComponent implements OnInit {
   constructor(private patientService: PatientService,
               private sharedService: SharedService,
               private router: Router,
-              private userService: UserService) { }
+              private userService: UserService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {}
 
@@ -27,7 +30,10 @@ export class RecordsListComponent implements OnInit {
       this.sharedService.data = patient;
       this.router.navigate(['/patients/documentation/' + patient.code]);
     } else {
-      console.error('You have no permission for this patient!');
+      const dialogRef = this.dialog.open(AccessDeniedComponent);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
     }
   }
 

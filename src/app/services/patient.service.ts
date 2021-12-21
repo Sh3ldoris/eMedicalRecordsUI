@@ -73,6 +73,7 @@ export class PatientService {
       ]
     },
   ];*/
+  private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private personService: PersonService,
               private http: HttpClient) {
@@ -114,9 +115,12 @@ export class PatientService {
     return this.getMockedPatientByCode(code);
   }
 
+  public saveNewPatient(p: Patient): Observable<any> {
+    return this.http.post('/api/patients', p, {headers: this.headers});
+  }
+
   public updatePatient(patient: Patient): Observable<Patient> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put('/api/patients/' + patient.code, patient, {headers: headers})
+    return this.http.put('/api/patients/' + patient.code, patient, {headers: this.headers})
       .pipe(map((response: any) => response))
       .pipe(map((result: Patient) => {
         result.person.birthDate = new Date(result.person.birthDate);

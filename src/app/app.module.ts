@@ -35,6 +35,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
+import { NewPatientComponent } from './components/new-patient/new-patient.component';
+import {DatePipe} from "@angular/common";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,7 @@ import { AccessDeniedComponent } from './components/access-denied/access-denied.
     CanAccessPatientsComponent,
     PaginationComponent,
     AccessDeniedComponent,
+    NewPatientComponent
   ],
   imports: [
     BrowserModule,
@@ -74,9 +79,13 @@ import { AccessDeniedComponent } from './components/access-denied/access-denied.
     MatAutocompleteModule,
     MatSelectModule,
     NgxMatSelectSearchModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

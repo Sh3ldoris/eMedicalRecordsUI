@@ -10,6 +10,7 @@ import {Patient} from "../../objects/patient.config";
 export class AllPatientsComponent implements OnInit {
 
   patients: Patient[] = [];
+  isNewRecordFormOpen: boolean = false;
 
   private filter: any = null;
 
@@ -25,6 +26,17 @@ export class AllPatientsComponent implements OnInit {
     if (event !== null) {
       this.patientService.getPatientsByFilter(event).subscribe((next: Patient[]) => {this.patients = next});
     } else {
+      this.loadData();
+    }
+  }
+
+  openReportForm() {
+    this.isNewRecordFormOpen = true;
+  }
+
+  public onCloseReport(event: any) {
+    this.isNewRecordFormOpen = false;
+    if (event === true) {
       this.loadData();
     }
   }

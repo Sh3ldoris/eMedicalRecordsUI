@@ -1,0 +1,201 @@
+<div class="new-patient mb-4 px-4 pt-1 pb-3 shadow-sm">
+  <p class="pb-2">Nový pacient <i class="fa fa-pencil" aria-hidden="true" style="padding: 0 0.2rem; font-size: 1.1rem;"></i></p>
+  <form (ngSubmit)="confirm()" [formGroup]="patientForm">
+
+
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Meno</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Priezvisko</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Rodné číslo</mat-label>
+          <input matInput formControlName="birthNumber">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Dátum narodenia</mat-label>
+          <input matInput [matDatepicker]="pickerBD" formControlName="birthDate">
+          <mat-datepicker-toggle matSuffix [for]="pickerBD"></mat-datepicker-toggle>
+          <mat-datepicker #pickerBD></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col col-xxl-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Rodinný stav</mat-label>
+          <input matInput formControlName="familyState">
+        </mat-form-field>
+      </div>
+      <div class="col col-xxl-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Zamestnanie</mat-label>
+          <input matInput formControlName="occupation">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Pohlavie</mat-label>
+          <mat-select  formControlName="gender">
+            <mat-option value="FEMALE">Žena</mat-option>
+            <mat-option value="MALE">Muž</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <hr/>
+
+    <p>Kontaktné údaje</p>
+    <div class="row">
+      <div class="col col-xl-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Adresa</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+      </div>
+      <div class="col col-xl-3">
+        <mat-form-field class="bounded" appearance="outline">
+          <mat-label>Telefón</mat-label>
+          <input matInput formControlName="phone">
+        </mat-form-field>
+      </div>
+    </div>
+    <hr/>
+
+    <p>Urgentné informácie</p>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Výška (cm)</mat-label>
+          <input type="number" matInput formControlName="height">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Váha (kg)</mat-label>
+          <input type="number" matInput formControlName="weight">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Krvná skupina</mat-label>
+          <mat-select  formControlName="bloodGroup">
+            <mat-option value="A">A</mat-option>
+            <mat-option value="B">B</mat-option>
+            <mat-option value="AB">AB</mat-option>
+            <mat-option value="0">0</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col col-xl-4 col-xxl">
+        <mat-form-field appearance="outline">
+          <mat-label>Tetanus</mat-label>
+          <input matInput [matDatepicker]="pickerT" formControlName="tetanus">
+          <mat-datepicker-toggle matSuffix [for]="pickerT"></mat-datepicker-toggle>
+          <mat-datepicker #pickerT></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <!--<div *ngIf="patient.doctor" class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Ošetrujúci lekár</mat-label>
+          <input matInput formControlName="patient.doctor.person.firstName + ' ' + patient.doctor.person.lastName + ' (' + patient.doctor.personalNumber + ')'">
+        </mat-form-field>
+      </div>-->
+    </div>
+    <div class="row">
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Alergie</mat-label>
+          <textarea matInput
+
+                    formControlName="allergies">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Dalšie risky</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+
+                    formControlName="otherRisks">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Trvalé medikácie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+
+                    formControlName="permanentMedicals">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Infekcie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+
+                    formControlName="infections">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Darcovstvo</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+
+                    formControlName="organDonation">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Transplantácie</mat-label>
+          <textarea matInput
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="6"
+                    cdkTextareaAutosize="true"
+
+                    formControlName="transplantation">
+          </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end">
+        <div class="row flex-md-nowrap m-0">
+          <button (click)="close.emit(false);" class="btn basic d-inline-block col-auto close">
+            Zrušíť
+          </button>
+          <button [disabled]="patientForm.invalid" type="submit" class="btn basic d-inline-block col-auto" [ngClass]="{'disabled' : patientForm.invalid}">
+            Uložiť
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

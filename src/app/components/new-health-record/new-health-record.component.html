@@ -33,70 +33,78 @@
       </div>
     </div>
     <p style="margin-top: 0!important;">Diagnózy</p>
+  </form>
 
     <div class="row">
-      <div class="col-2">
-        <mat-form-field appearance="outline">
-          <mat-label>Kód diagnózy</mat-label>
-          <input matInput formControlName="code">
+      <div class="col-4">
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Diagnóza</mat-label>
+          <mat-select [(ngModel)]="value">
+            <mat-option>
+              <ngx-mat-select-search ngModel (ngModelChange)="filterArray($event)"
+                                     placeholderLabel="Zadajte kód alebo názov diagnózy"
+                                     noEntriesFoundLabel="Hľadaná diagnóza nenájdená"></ngx-mat-select-search>
+            </mat-option>
+            <mat-option *ngFor="let d of filteredDiagnosis" [value]="d">
+              {{d.code}} - {{d.name}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
-      <div class="col-5">
+      <div class="col-7">
         <mat-form-field appearance="outline">
           <mat-label>Lokalizácia diagnózy</mat-label>
-          <input matInput formControlName="localization">
+          <input matInput [(ngModel)]="localizationToBe">
         </mat-form-field>
       </div>
-      <div class="col-5">
-        <div class="row flex-md-nowrap m-0">
-          <mat-form-field appearance="outline" class="col-auto">
-            <mat-label>Názov diagnózy</mat-label>
-            <input matInput formControlName="diagnosisName">
-          </mat-form-field>
-          <button (click)="$event.preventDefault(); addNewDiagnosis();" class="btn basic col-auto" style="">
+      <div class="col d-flex justify-content-end">
+        <div class="row flex-md-nowrap mx-0 mt-1 mb-4">
+          <button (click)="$event.preventDefault(); addNewDiagnosis();" class="btn basic col-auto" style="" [disabled]="this.value === null">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <div class="row pb-4">
-      <div class="col-12">
-        <div class="example-container mat-elevation-z8">
-          <table mat-table [dataSource]="assignedDiagnosis">
+  <div class="row pb-4">
+    <div class="col-12">
+      <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="assignedDiagnosis">
 
-            <ng-container matColumnDef="code">
-              <th mat-header-cell *matHeaderCellDef>Kód</th>
-              <td mat-cell *matCellDef="let element"> {{element.diagnosis.code}} </td>
-            </ng-container>
+          <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef>Kód</th>
+            <td mat-cell *matCellDef="let element"> {{element.diagnosis.code}} </td>
+          </ng-container>
 
-            <ng-container matColumnDef="localization">
-              <th mat-header-cell *matHeaderCellDef>Lokalizácia</th>
-              <td mat-cell *matCellDef="let element"> {{element.localization}} </td>
-            </ng-container>
+          <ng-container matColumnDef="localization">
+            <th mat-header-cell *matHeaderCellDef>Lokalizácia</th>
+            <td mat-cell *matCellDef="let element"> {{element.localization}} </td>
+          </ng-container>
 
-            <ng-container matColumnDef="diagnosisName">
-              <th mat-header-cell *matHeaderCellDef>Názov</th>
-              <td mat-cell *matCellDef="let element"> {{element.diagnosis.name}} </td>
-            </ng-container>
+          <ng-container matColumnDef="diagnosisName">
+            <th mat-header-cell *matHeaderCellDef>Názov</th>
+            <td mat-cell *matCellDef="let element"> {{element.diagnosis.name}} </td>
+          </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-        </div>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
       </div>
     </div>
+  </div>
 
+  <div class="row">
     <div class="col-12 d-flex justify-content-end">
       <div class="row flex-md-nowrap m-0">
         <button (click)="close.emit(false);" class="btn basic d-inline-block col-auto close">
           Zrušíť
         </button>
-        <button [disabled]="reportForm.invalid" type="submit" class="btn basic d-inline-block col-auto" [ngClass]="{'disabled' : reportForm.invalid}">
+        <button (click)="confirm()" [disabled]="reportForm.invalid" type="submit" class="btn basic d-inline-block col-auto" [ngClass]="{'disabled' : reportForm.invalid}">
           Uložiť
         </button>
       </div>
     </div>
-  </form>
+  </div>
+
 
 </div>

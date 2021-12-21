@@ -5,8 +5,10 @@ import {UserService} from "../../services/user.service";
 import {DoctorService} from "../../services/doctor.service";
 import {HealthRecord} from "../../objects/health-record.config";
 import {Doctor} from "../../objects/user.config";
-import {AssignedDiagnosis} from "../../objects/diagnosis.config";
+import {AssignedDiagnosis, Diagnosis} from "../../objects/diagnosis.config";
 import {MatTable} from "@angular/material/table";
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-new-health-record',
@@ -20,18 +22,37 @@ export class NewHealthRecordComponent implements OnInit {
 
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
 
+  value: any = null;
+  localizationToBe: string = '';
+
   doctor: Doctor;
   assignedDiagnosis: AssignedDiagnosis[] = [];
+  filteredOptions: Observable<string[]>;
+  diagnosis: Diagnosis[] = [] = [
+    {
+      code: 'A001',
+      name: 'Choroba'
+    },
+    {
+      code: 'A002',
+      name: 'Choroba2'
+    },
+    {
+      code: 'A003',
+      name: 'Choroba3'
+    },
+    {
+      code: 'B001',
+      name: 'Choroba4'
+    }
+  ]
   displayedColumns = ['code', 'localization', 'diagnosisName'];
+  filteredDiagnosis: Diagnosis[] = this.diagnosis;
 
   reportForm = this.fb.group({
     name: [null, Validators.required],
-    report: [null, Validators.required],
-    code: [null, Validators.required],
-    localization: [null, Validators.required],
-    diagnosisName: [null, Validators.required],
+    report: [null, Validators.required]
   });
-
   name: string;
   report: string;
 
@@ -69,15 +90,22 @@ export class NewHealthRecordComponent implements OnInit {
 
   addNewDiagnosis() {
     const newDiagnosis: AssignedDiagnosis = {
-      localization: this.reportForm.get('localization')?.value,
-      diagnosis: {
-        code: this.reportForm.get('code')?.value,
-        name: this.reportForm.get('diagnosisName')?.value
-      }
+      localization: this.localizationToBe,
+      diagnosis: this.value
     };
-    console.log(newDiagnosis);
     this.assignedDiagnosis.push(newDiagnosis);
+    this.value = null;
+    this.localizationToBe = '';
     this.table.renderRows();
+  }
+
+  filterArray(event : string) {
+    this.filteredDiagnosis = [];
+    this.diagnosis.forEach(value => {
+      if (value.code.toLowerCase().includes(event.toLowerCase()) ||
+          value.name.toLowerCase().includes(event.toLowerCase())) {
+        this.filteredDiagnosis.push(value);
+      }});
   }
 
 }

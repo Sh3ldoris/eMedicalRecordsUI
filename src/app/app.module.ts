@@ -30,6 +30,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { BlockUIModule } from 'ng-block-ui';
 import { BlockUIHttpModule } from 'ng-block-ui/http';
 import {MatTableModule} from '@angular/material/table';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import {MatTableModule} from '@angular/material/table';
     BlockUIModule.forRoot(),
     BlockUIHttpModule.forRoot(),
     MatTableModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    NgxMatSelectSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

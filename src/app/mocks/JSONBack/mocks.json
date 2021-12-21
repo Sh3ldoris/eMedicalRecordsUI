@@ -287,6 +287,50 @@
         }
       ],
       "code": "00b1a611-de08-4129-bd17-c6db47874d3a"
+    },
+    {
+      "patientCode": "SK019811",
+      "date": "2021-12-21T19:18:45.159Z",
+      "title": "Hej no",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-21T19:18:28.026Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "adadada",
+      "diagnosis": [
+        {
+          "localization": "Noha",
+          "diagnosis": {
+            "code": "A003",
+            "name": "Choroba3"
+          }
+        },
+        {
+          "localization": "",
+          "diagnosis": {
+            "code": "A001",
+            "name": "Choroba"
+          }
+        }
+      ],
+      "code": "026d6145-a4b2-4dc0-a535-9cada91f9f39"
     }
   ]
 }

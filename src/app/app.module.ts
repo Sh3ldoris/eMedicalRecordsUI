@@ -39,6 +39,7 @@ import { NewPatientComponent } from './components/new-patient/new-patient.compon
 import {DatePipe} from "@angular/common";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { AmbulanceComponent } from './components/ambulance/ambulance.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     CanAccessPatientsComponent,
     PaginationComponent,
     AccessDeniedComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    AmbulanceComponent
   ],
   imports: [
     BrowserModule,

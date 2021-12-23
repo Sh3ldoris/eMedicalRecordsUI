@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit {
         {
           title: 'Ambulancia',
           icon: 'fa fa-ambulance',
-          path: 'ambulance',
+          path: '/ambulance',
         }
       ],
     }

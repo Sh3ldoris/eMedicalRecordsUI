@@ -1,9 +1,9 @@
 {
   "patients": [
     {
-      "code": "SK019810",
+      "code": "10984209",
       "insurance": {
-        "insuranceCode": "499013232"
+        "insuranceCode": "2400"
       },
       "person": {
         "firstName": "Adam",
@@ -11,23 +11,23 @@
         "gender": "MALE",
         "birthNumber": "981010/1423",
         "birthName": "Lány",
-        "birthDate": "2021-12-09T15:22:09.559Z",
+        "birthDate": "1998-10-10T15:22:09.559Z",
         "address": "Zábrežná 203/8, Predaná",
-        "phone": "+421944911835",
+        "phone": "+421944911833",
         "familyState": "Sloboný",
         "occupation": "Študent"
       },
       "urgentInfo": {
         "allergies": "Pele tráv, prach",
-        "otherRisks": "Príliš nebezpečný pre svoje okolie",
-        "permanentMedicals": "Antihistamiká",
-        "infections": "Závažná infekcia",
-        "organDonation": "Súhlas pre darovanie kostnej drene",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
         "height": 185,
         "weight": 82,
-        "tetanus": "2021-12-09T15:22:09.559Z",
-        "transplantation": "Transplantovaná ľavá bradavka",
-        "bloodGroup": "B+"
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
       },
       "doctor": {
         "personalNumber": "5ZY0123",
@@ -51,8 +51,17 @@
         }
       },
       "canAccess": [
-        "5ZY0153"
-      ]
+        "5ZY0123"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     },
     {
       "code": "SK019811",
@@ -130,101 +139,762 @@
         "5ZY0153"
       ]
     },
+
     {
-      "code": "84b3204c-0df0-407d-b488-4431f761436a",
+      "code": "06875928",
       "insurance": {
-        "insuranceCode": "b4030eb8-d17f-48f3-a4a4-d282a87931a5"
+        "insuranceCode": 2400
       },
       "person": {
-        "firstName": "Pepa",
-        "lastName": "Zdepa",
+        "firstName": "Mcintosh",
+        "lastName": "Wilson",
         "gender": "MALE",
-        "birthNumber": "900410/1022",
-        "birthDate": "2021-12-21T21:55:18.833Z",
-        "address": "Potocna 10",
-        "phone": "0944911844",
-        "familyState": "Slobodny",
-        "occupation": "Programator"
+        "birthNumber": "789966/3972",
+        "birthName": "Wilson",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
       },
       "urgentInfo": {
-        "allergies": "Bez",
-        "otherRisks": "Nic",
-        "permanentMedicals": "Antihistamika",
-        "infections": "Bez",
-        "organDonation": "Bez",
-        "height": 190,
-        "weight": 85,
-        "tetanus": "2021-12-21T21:55:18.833Z",
-        "transplantation": "Oblicka",
-        "bloodGroup": "A+"
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
       },
       "canAccess": [
         "5ZY0123"
-      ]
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     },
     {
-      "code": "f7e9fdf8-5bde-4dad-b343-d551a98c21c6",
+      "code": "13898732",
       "insurance": {
-        "insuranceCode": "5678a4b7-5e81-4bba-b06d-085f1e3b7cfc"
+        "insuranceCode": 2400
       },
       "person": {
-        "firstName": "Test",
-        "lastName": "Test",
+        "firstName": "Hinton",
+        "lastName": "Reyes",
         "gender": "MALE",
-        "birthNumber": "101010",
-        "birthDate": "2021-12-11T23:00:00.000Z",
-        "address": null,
-        "phone": "158",
-        "familyState": "Slobodny",
-        "occupation": "Tester"
+        "birthNumber": "214865/4851",
+        "birthName": "Reyes",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
       },
       "urgentInfo": {
-        "allergies": null,
-        "otherRisks": null,
-        "permanentMedicals": null,
-        "infections": null,
-        "organDonation": null,
-        "height": null,
-        "weight": null,
-        "tetanus": "2021-12-21T22:13:44.382Z",
-        "transplantation": null,
-        "bloodGroup": null
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
       },
       "canAccess": [
         "5ZY0123"
-      ]
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     },
     {
-      "code": "201b62a5-deaa-4a1b-ab81-e36b7f910c65",
+      "code": "44258738",
       "insurance": {
-        "insuranceCode": "412a9105-a9ed-4013-9b03-aefa12ce641e"
+        "insuranceCode": 2400
       },
       "person": {
-        "firstName": "Testerka",
-        "lastName": "Testova",
+        "firstName": "Sharlene",
+        "lastName": "Whitfield",
         "gender": "FEMALE",
-        "birthNumber": "101010",
-        "birthDate": "1990-11-30T23:00:00.000Z",
-        "address": null,
-        "phone": "112",
-        "familyState": "Slobodna",
-        "occupation": "Ziadne"
+        "birthNumber": "119905/9969",
+        "birthName": "Whitfield",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
       },
       "urgentInfo": {
-        "allergies": null,
-        "otherRisks": null,
-        "permanentMedicals": null,
-        "infections": null,
-        "organDonation": null,
-        "height": null,
-        "weight": null,
-        "tetanus": null,
-        "transplantation": null,
-        "bloodGroup": "AB"
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
       },
       "canAccess": [
         "5ZY0123"
-      ]
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "79483513",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Marta",
+        "lastName": "Kelley",
+        "gender": "FEMALE",
+        "birthNumber": "213009/0262",
+        "birthName": "Kelley",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "canAccess": [
+        "5ZY0123"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "92074075",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Jessica",
+        "lastName": "Gallegos",
+        "gender": "FEMALE",
+        "birthNumber": "324566/0254",
+        "birthName": "Gallegos",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "canAccess": [
+        "5ZY0123"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "87606748",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Roman",
+        "lastName": "Pearson",
+        "gender": "MALE",
+        "birthNumber": "919825/6192",
+        "birthName": "Pearson",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "canAccess": [
+        "5ZY0123"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "60162081",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Wall",
+        "lastName": "Sweeney",
+        "gender": "MALE",
+        "birthNumber": "122226/4888",
+        "birthName": "Sweeney",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "18372487",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Lily",
+        "lastName": "Bullock",
+        "gender": "FEMALE",
+        "birthNumber": "873416/1547",
+        "birthName": "Bullock",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "33591332",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Everett",
+        "lastName": "Bartlett",
+        "gender": "MALE",
+        "birthNumber": "863623/4982",
+        "birthName": "Bartlett",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "03619849",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Estes",
+        "lastName": "Massey",
+        "gender": "MALE",
+        "birthNumber": "265270/3776",
+        "birthName": "Massey",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "71172383",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Lourdes",
+        "lastName": "Porter",
+        "gender": "FEMALE",
+        "birthNumber": "440497/1244",
+        "birthName": "Porter",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
+    },
+    {
+      "code": "17845246",
+      "insurance": {
+        "insuranceCode": 2400
+      },
+      "person": {
+        "firstName": "Nielsen",
+        "lastName": "Sanders",
+        "gender": "MALE",
+        "birthNumber": "393496/5918",
+        "birthName": "Sanders",
+        "birthDate": "1998-10-10T15:22:09.559Z",
+        "address": "Zábrežná 203/8, Predaná",
+        "phone": 421944911833,
+        "familyState": "Sloboný",
+        "occupation": "Študent"
+      },
+      "urgentInfo": {
+        "allergies": "Pele tráv, prach",
+        "otherRisks": "",
+        "permanentMedicals": "Antihistaminiká",
+        "infections": "",
+        "organDonation": "",
+        "height": 185,
+        "weight": 82,
+        "tetanus": "1999-10-10T15:22:09.559Z",
+        "transplantation": "Transplantovaná ľavá oblička",
+        "bloodGroup": "B"
+      },
+      "doctor": {
+        "personalNumber": "5ZY0153",
+        "password": "lekar",
+        "person": {
+          "firstName": "MUDr. Elena",
+          "lastName": "Auxtová",
+          "gender": "FEMALE",
+          "birthNumber": "doctor/2",
+          "birthName": "",
+          "birthDate": "2021-12-09T15:22:09.559Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "všeobecná starostlivosť o deti a dorast",
+        "ambulance": {
+          "name": "Všeobecná ambulancia pre deti a dorast, Valaská",
+          "address": "Štúrova  481/5 97646  Valaská"
+        }
+      },
+      "canAccess": [
+        "5ZY0153"
+      ],
+      "anamnesis": {
+        "currentDiseases": "",
+        "previousPeriod": "",
+        "pharmacologyHistory": "antihistaminiká",
+        "abuses": "Fajčenie",
+        "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     }
   ],
   "records": [
@@ -427,6 +1097,71 @@
         }
       ],
       "code": "026d6145-a4b2-4dc0-a535-9cada91f9f39"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2021-10-23T10:34:09.617Z",
+      "title": "Preventívna prehliadka pacienta",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-23T13:31:41.588Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Bez komplikáciá, váha v norme, pulz a dýchanie pravidelný, zrak v poriadku",
+      "code": "8e1de848-e74c-4099-8d04-830235e6e647"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2021-12-23T13:38:54.005Z",
+      "title": "Kontrolné vyšetrenie pigmentových névov",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-23T13:34:59.455Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Na tele prítomné početné névy bez atypií, bez iných komplikácií",
+      "diagnosis": [
+        {
+          "localization": "Chrbát",
+          "diagnosis": {
+            "code": "D22",
+            "name": "Melanocytové (pigmentové) névy"
+          }
+        }
+      ],
+      "code": "31e4995e-f16f-4488-a2f8-f6c285809c6f"
     }
   ]
 }

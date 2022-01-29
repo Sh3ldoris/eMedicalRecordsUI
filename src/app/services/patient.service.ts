@@ -83,6 +83,7 @@ export class PatientService {
       return this.getAllMockedPatients();
   }
 
+  //TODO Patients: Add Doctor parameter
   public getAllPatientByDoctor(personalNumber: string): Observable<Patient[]> {
     return this.getMockedPatientsByDoctor(personalNumber);
   }
@@ -119,7 +120,9 @@ export class PatientService {
     return this.http.post('/api/patients', p, {headers: this.headers});
   }
 
+  //TODO Patients: Pass only patient object
   public updatePatient(patient: Patient): Observable<Patient> {
+    console.log(patient);
     return this.http.put('/api/patients/' + patient.code, patient, {headers: this.headers})
       .pipe(map((response: any) => response))
       .pipe(map((result: Patient) => {
@@ -133,6 +136,7 @@ export class PatientService {
     return this.http.get('/api/patients')
       .pipe(map((response: any) => response))
       .pipe(map((result: Patient[]) => {
+          console.log(result);
           result.forEach(p => {
             p.person.birthDate = new Date(p.person.birthDate);
             p.urgentInfo.tetanus = new Date(p.urgentInfo.tetanus);
@@ -157,9 +161,10 @@ export class PatientService {
   }
 
   private getMockedPatientByCode(code: string): Observable<Patient> {
-      return this.http.get('/api/patients?code=' + code)
-        .pipe(map((response: any) => response[0]))
+      return this.http.get('/api/patients/' + code)
+        .pipe(map((response: any) => response))
         .pipe(map((result: Patient) => {
+          console.log(result);
           result.person.birthDate = new Date(result.person.birthDate);
           result.urgentInfo.tetanus = new Date(result.urgentInfo.tetanus);
           return result;

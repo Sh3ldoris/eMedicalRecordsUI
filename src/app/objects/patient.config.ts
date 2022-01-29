@@ -6,7 +6,7 @@ export interface MedicalRecord {
 
 export interface Patient {
   code: string,
-  insurance: Insurance,
+  insurance: string,
   person: Person,
   urgentInfo: UrgentInfo,
   anamnesis?: Anamnesis,

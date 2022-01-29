@@ -49,31 +49,29 @@ export class NewPatientComponent implements OnInit {
     }
     const newPatient : Patient = {
       code: uuid(),
-      insurance: {
-        insuranceCode:  uuid()
-      },
+      insurance: uuid(),
       person: {
         firstName: this.patientForm.get('firstName')?.value,
         lastName: this.patientForm.get('lastName')?.value,
         gender: this.patientForm.get('gender')?.value,
         birthNumber: this.patientForm.get('birthNumber')?.value,
         birthDate: this.patientForm.get('birthDate')?.value,
-        address: this.patientForm.get('address')?.value,
+        address: this.patientForm.get('address')?.value  || '',
         phone: this.patientForm.get('phone')?.value,
         familyState: this.patientForm.get('familyState')?.value,
         occupation: this.patientForm.get('occupation')?.value
       },
       urgentInfo: {
-        allergies: this.patientForm.get('allergies')?.value,
-        otherRisks: this.patientForm.get('otherRisks')?.value,
-        permanentMedicals: this.patientForm.get('permanentMedicals')?.value,
-        infections: this.patientForm.get('infections')?.value,
-        organDonation: this.patientForm.get('organDonation')?.value,
-        height: this.patientForm.get('height')?.value,
-        weight: this.patientForm.get('weight')?.value,
+        allergies: this.patientForm.get('allergies')?.value  || '',
+        otherRisks: this.patientForm.get('otherRisks')?.value  || '',
+        permanentMedicals: this.patientForm.get('permanentMedicals')?.value  || '',
+        infections: this.patientForm.get('infections')?.value || '',
+        organDonation: this.patientForm.get('organDonation')?.value || '',
+        height: this.patientForm.get('height')?.value | 0,
+        weight: this.patientForm.get('weight')?.value | 0,
         tetanus: this.patientForm.get('tetanus')?.value,
-        transplantation: this.patientForm.get('transplantation')?.value,
-        bloodGroup: this.patientForm.get('bloodGroup')?.value
+        transplantation: this.patientForm.get('transplantation')?.value  || '',
+        bloodGroup: this.patientForm.get('bloodGroup')?.value  || ''
       },
       canAccess: [this.userService.getUser().personalNumber]
     };

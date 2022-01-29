@@ -23,18 +23,13 @@ export class HealthRecordService {
   }
 
   private getAllMockedRecords(pc: string): Observable<HealthRecord[]> {
-    return this.http.get('/api/records')
+    return this.http.get('/api/records/' + pc)
       .pipe(map((response: any) => response))
       .pipe(map((result: HealthRecord[]) => {
           result.forEach(r => {
             r.date = new Date(r.date);
             r.doctor.person.birthDate = new Date(r.doctor.person.birthDate);
           });
-          return result;
-        }
-      ))
-      .pipe(map((result: HealthRecord[]) => {
-          result = result.filter(r => r.patientCode === pc );
           return result;
         }
       ))
@@ -53,9 +48,7 @@ export class HealthRecordService {
   }
 
   private addMockedRecord(record: HealthRecord): Observable<any> {
-    let data: any = record;
-    data['code'] = uuid();
-    return this.http.post('/api/records', data);
+    return this.http.post('/api/records', record);
   }
 
 }

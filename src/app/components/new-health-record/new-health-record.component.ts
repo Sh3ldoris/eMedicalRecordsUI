@@ -8,6 +8,7 @@ import {Doctor} from "../../objects/user.config";
 import {AssignedDiagnosis, Diagnosis} from "../../objects/diagnosis.config";
 import {MatTable} from "@angular/material/table";
 import {Observable} from 'rxjs';
+import {DiagnosisService} from "../../services/diagnosis.service";
 
 @Component({
   selector: 'app-new-health-record',
@@ -27,24 +28,7 @@ export class NewHealthRecordComponent implements OnInit {
   doctor: Doctor;
   assignedDiagnosis: AssignedDiagnosis[] = [];
   filteredOptions: Observable<string[]>;
-  diagnosis: Diagnosis[] = DIAG; /*[
-    {
-      code: 'A001',
-      name: 'Choroba'
-    },
-    {
-      code: 'A002',
-      name: 'Choroba2'
-    },
-    {
-      code: 'A003',
-      name: 'Choroba3'
-    },
-    {
-      code: 'B001',
-      name: 'Choroba4'
-    }
-  ]*/
+  diagnosis: Diagnosis[] = [];
   displayedColumns = ['code', 'localization', 'diagnosisName'];
   filteredDiagnosis: Diagnosis[] = this.diagnosis;
 
@@ -58,9 +42,11 @@ export class NewHealthRecordComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private recordService: HealthRecordService,
               private userService: UserService,
-              private doctorService: DoctorService) { }
+              private doctorService: DoctorService,
+              private diagnosisService: DiagnosisService) { }
 
   ngOnInit(): void {
+    this.loadDiagnosis();
     this.doctor = this.doctorService.getDoctorByPersonalNumber(this.userService.getUser().personalNumber);
   }
 
@@ -105,6 +91,13 @@ export class NewHealthRecordComponent implements OnInit {
           value.name.toLowerCase().includes(event.toLowerCase())) {
         this.filteredDiagnosis.push(value);
       }});
+  }
+
+  private loadDiagnosis() {
+      this.diagnosisService.getAllDiagnosis().subscribe((next: Diagnosis[]) => {
+        this.diagnosis = next;
+        this.filteredDiagnosis = next;
+      });
   }
 
 }

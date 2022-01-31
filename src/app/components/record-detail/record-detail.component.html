@@ -77,7 +77,7 @@
   <div class="col col-xl-4 col-xxl">
     <mat-form-field appearance="outline" class="read-only">
       <mat-label>Tetanus</mat-label>
-      <input matInput readonly="true" value="{{patient.urgentInfo.tetanus.toLocaleDateString()}}">
+      <input matInput readonly="true" value="{{patient.urgentInfo.tetanus?.toLocaleDateString()}}">
     </mat-form-field>
   </div>
   <div *ngIf="patient.doctor" class="col">

@@ -37,7 +37,7 @@ export interface UrgentInfo {
   organDonation: string,
   height: number,
   weight: number,
-  tetanus: Date,
+  tetanus?: Date,
   transplantation: string,
   bloodGroup: string
 }

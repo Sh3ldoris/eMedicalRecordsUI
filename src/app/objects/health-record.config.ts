@@ -1,5 +1,6 @@
 import {Doctor} from "./user.config";
 import {AssignedDiagnosis} from "./diagnosis.config";
+import {Drg} from "./drg.config";
 
 export interface HealthRecord {
   patientCode: string,
@@ -7,5 +8,6 @@ export interface HealthRecord {
   title: string,
   doctor: Doctor,
   report: string,
-  diagnosis?: AssignedDiagnosis[]
+  diagnosis?: AssignedDiagnosis[],
+  drgs?: Drg[]
 }

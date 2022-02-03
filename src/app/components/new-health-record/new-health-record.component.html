@@ -93,6 +93,62 @@
     </div>
   </div>
 
+
+  <p style="margin-top: 0!important;">Výdavky pri zázname</p>
+
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Výdavok</mat-label>
+        <mat-select [(ngModel)]="drgTypeToBe">
+          <mat-option>
+            <ngx-mat-select-search ngModel (ngModelChange)="filterArrayDrg($event)"
+                                   placeholderLabel="Zadajte typ výdavku"
+                                   noEntriesFoundLabel="Typ výdavku nenájdený"></ngx-mat-select-search>
+          </mat-option>
+          <mat-option *ngFor="let d of filteredDrgTypes" [value]="d">
+            {{d}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-7">
+      <mat-form-field appearance="outline">
+        <mat-label>Cena výdavku (€)</mat-label>
+        <input matInput type="number" [(ngModel)]="drgPriceToBe">
+      </mat-form-field>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <div class="row flex-md-nowrap mx-0 mt-1 mb-4">
+        <button (click)="$event.preventDefault(); addNewDrg();" class="btn basic col-auto" style="" [disabled]="this.drgTypeToBe === null">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pb-4">
+    <div class="col-12">
+      <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="assignedDrgs">
+
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Typ výdavku</th>
+            <td mat-cell *matCellDef="let element2"> {{element2.type}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Výška výdavku (€)</th>
+            <td mat-cell *matCellDef="let element2"> {{element2.price + ' €'}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsDrg; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row2; columns: displayedColumnsDrg;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12 d-flex justify-content-end">
       <div class="row flex-md-nowrap m-0">

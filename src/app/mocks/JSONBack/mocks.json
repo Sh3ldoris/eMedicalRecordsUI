@@ -60,7 +60,7 @@
         "abuses": "Fajčenie",
         "physiologicalFunctions": "Zvýšený krvný tlak, pulz a dýchynie v norme",
         "gynecologicalHistory": "",
-        "familyAnamnesis": ""
+        "familyAnamnesis": "Bez ochoreni"
       }
     },
     {
@@ -139,7 +139,6 @@
         "5ZY0153"
       ]
     },
-
     {
       "code": "06875928",
       "insurance": {
@@ -895,6 +894,79 @@
         "gynecologicalHistory": "",
         "familyAnamnesis": ""
       }
+    },
+    {
+      "code": "28205c03-a851-4827-9110-7ea8efaf302e",
+      "insurance": {
+        "insuranceCode": "e3e85e32-cf03-43ff-bdaf-af493c07a999"
+      },
+      "person": {
+        "firstName": "Test",
+        "lastName": "Test",
+        "gender": "MALE",
+        "birthNumber": "dfsd",
+        "birthDate": "2021-12-11T23:00:00.000Z",
+        "address": null,
+        "phone": "sdfsdf",
+        "familyState": "Slbodny",
+        "occupation": "student"
+      },
+      "urgentInfo": {
+        "allergies": null,
+        "otherRisks": null,
+        "permanentMedicals": null,
+        "infections": null,
+        "organDonation": null,
+        "height": null,
+        "weight": null,
+        "tetanus": null,
+        "transplantation": null,
+        "bloodGroup": null
+      },
+      "canAccess": [
+        "5ZY0123"
+      ]
+    },
+    {
+      "code": "0bd5b2a9-4ad8-472f-9004-376bb9d72c4c",
+      "insurance": {
+        "insuranceCode": "03325ff1-13dc-4343-a34a-35834539a897"
+      },
+      "person": {
+        "firstName": "Test",
+        "lastName": "Test",
+        "gender": "MALE",
+        "birthNumber": "99999",
+        "birthDate": "2022-02-01T23:00:00.000Z",
+        "address": null,
+        "phone": "1111",
+        "familyState": "testuje",
+        "occupation": "tester"
+      },
+      "urgentInfo": {
+        "allergies": null,
+        "otherRisks": null,
+        "permanentMedicals": null,
+        "infections": null,
+        "organDonation": null,
+        "height": null,
+        "weight": null,
+        "tetanus": "1970-01-01T00:00:00.000Z",
+        "transplantation": null,
+        "bloodGroup": null
+      },
+      "canAccess": [
+        "5ZY0123"
+      ],
+      "anamnesis": {
+        "currentDiseases": "Mierny kasel",
+        "previousPeriod": "",
+        "pharmacologyHistory": "",
+        "abuses": "",
+        "physiologicalFunctions": "",
+        "gynecologicalHistory": "",
+        "familyAnamnesis": ""
+      }
     }
   ],
   "records": [
@@ -1019,43 +1091,6 @@
     },
     {
       "patientCode": "SK019811",
-      "date": "2021-12-20T21:23:41.637Z",
-      "title": "Testovacia sprava",
-      "doctor": {
-        "personalNumber": "5ZY0123",
-        "password": "admin123",
-        "person": {
-          "firstName": "MUDr. Vladimír",
-          "lastName": "Kucko",
-          "gender": "MALE",
-          "birthNumber": "doctor/1",
-          "birthName": "",
-          "birthDate": "2021-12-20T21:23:03.506Z",
-          "address": "",
-          "phone": "",
-          "familyState": "",
-          "occupation": ""
-        },
-        "specification": "oftalmológ",
-        "ambulance": {
-          "name": "O Č N Á   A M B U L A N C I A",
-          "address": "ul. V. Spanyola 43, Žilina 010 01"
-        }
-      },
-      "report": "Najdene",
-      "diagnosis": [
-        {
-          "localization": "Telo",
-          "diagnosis": {
-            "code": "A001",
-            "name": "Brusny tyfus"
-          }
-        }
-      ],
-      "code": "00b1a611-de08-4129-bd17-c6db47874d3a"
-    },
-    {
-      "patientCode": "SK019811",
       "date": "2021-12-21T19:18:45.159Z",
       "title": "Hej no",
       "doctor": {
@@ -1162,6 +1197,239 @@
         }
       ],
       "code": "31e4995e-f16f-4488-a2f8-f6c285809c6f"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2021-12-23T15:17:43.173Z",
+      "title": "Test",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2021-12-23T14:34:30.781Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "gdfgd",
+      "diagnosis": [
+        {
+          "localization": "",
+          "diagnosis": {
+            "code": "A02",
+            "name": "Iné infekcie salmonelami"
+          }
+        }
+      ],
+      "drgs": [
+        {
+          "type": "Diagnostický výkon",
+          "price": 10
+        }
+      ],
+      "code": "fba44476-d4c8-4b55-8365-72e7ea2281f7"
+    },
+    {
+      "patientCode": "0bd5b2a9-4ad8-472f-9004-376bb9d72c4c",
+      "date": "2022-02-02T18:38:52.268Z",
+      "title": "Test",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2022-02-02T18:37:42.398Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "Vsetko ok",
+      "diagnosis": [
+        {
+          "localization": "ttttt",
+          "diagnosis": {
+            "code": "A71",
+            "name": "Trachóm"
+          }
+        }
+      ],
+      "code": "17218007-fca9-4b75-b515-5c3251040ed3"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2022-02-03T10:00:27.248Z",
+      "title": "Test",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2022-02-03T09:59:59.338Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "dfsfsd",
+      "drgs": [
+        {
+          "type": null,
+          "price": 3
+        },
+        {
+          "type": null,
+          "price": 5
+        }
+      ],
+      "code": "d2f03892-a3ce-4283-9935-62686ce9bf55"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2022-02-03T10:09:11.574Z",
+      "title": "Test",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2022-02-03T10:08:49.426Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "adasda",
+      "drgs": [
+        {
+          "type": "Zobrazovacia technika",
+          "price": 5
+        }
+      ],
+      "code": "a0e03b18-ab16-4778-87e2-4b07d8aa3d46"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2022-02-03T10:22:58.205Z",
+      "title": "Skuska",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2022-02-03T10:22:27.829Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "test",
+      "diagnosis": [
+        {
+          "localization": "test",
+          "diagnosis": {
+            "code": "A71",
+            "name": "Trachóm"
+          }
+        }
+      ],
+      "drgs": [
+        {
+          "type": "Iné",
+          "price": 15
+        }
+      ],
+      "code": "437b27bc-2ee3-40df-8a97-a1ac9f6efcc1"
+    },
+    {
+      "patientCode": "10984209",
+      "date": "2022-02-03T10:29:27.271Z",
+      "title": "Testovanie skuska",
+      "doctor": {
+        "personalNumber": "5ZY0123",
+        "password": "admin123",
+        "person": {
+          "firstName": "MUDr. Vladimír",
+          "lastName": "Kucko",
+          "gender": "MALE",
+          "birthNumber": "doctor/1",
+          "birthName": "",
+          "birthDate": "2022-02-03T10:22:27.829Z",
+          "address": "",
+          "phone": "",
+          "familyState": "",
+          "occupation": ""
+        },
+        "specification": "oftalmológ",
+        "ambulance": {
+          "name": "O Č N Á   A M B U L A N C I A",
+          "address": "ul. V. Spanyola 43, Žilina 010 01"
+        }
+      },
+      "report": "testovamie",
+      "drgs": [
+        {
+          "type": "Aplikácia liekov",
+          "price": 5
+        },
+        {
+          "type": "Iné",
+          "price": 10
+        }
+      ],
+      "code": "cb6bed4d-66a7-4720-8614-9dfdc732b7d5"
     }
   ]
 }

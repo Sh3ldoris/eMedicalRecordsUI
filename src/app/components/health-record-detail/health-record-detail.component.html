@@ -66,3 +66,33 @@
     Bez diagnóz
   </div>
 </div>
+
+<hr/>
+
+<p>Výdavky pri zázname</p>
+<div class="row pb-4" *ngIf="record.drgs !== undefined">
+  <div class="col-12">
+    <div class="example-container mat-elevation-z8">
+      <table mat-table [dataSource]="record.drgs">
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>Typ výdavku</th>
+          <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Výška výdavku (€)</th>
+          <td mat-cell *matCellDef="let element"> {{element.price + ' €'}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsDrg; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsDrg;"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="record.drgs === undefined">
+  <div class="col-12">
+    Bez výdavkov
+  </div>
+</div>

@@ -10,6 +10,7 @@ export class HealthRecordDetailComponent implements OnInit {
 
   @Input() record: HealthRecord;
   displayedColumns = ['code', 'localization', 'name'];
+  displayedColumnsDrg = ['type', 'price'];
   dataSource = ELEMENT_DATA;
 
   constructor() { }

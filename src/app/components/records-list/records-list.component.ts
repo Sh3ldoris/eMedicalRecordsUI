@@ -1,11 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MedicalRecord, Patient} from "../../objects/patient.config";
+import {Patient} from "../../objects/patient.config";
 import {PatientService} from "../../services/patient.service";
 import {Router} from "@angular/router";
 import {SharedService} from "../../services/shared.service";
 import {UserService} from "../../services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AccessDeniedComponent} from "../access-denied/access-denied.component";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-records-list',
@@ -20,13 +21,13 @@ export class RecordsListComponent implements OnInit {
   constructor(private patientService: PatientService,
               private sharedService: SharedService,
               private router: Router,
-              private userService: UserService,
+              private userService: AuthService,
               public dialog: MatDialog) { }
 
   ngOnInit(): void {}
 
   openPatientCard(patient: Patient) {
-    if (patient.canAccess?.includes(this.userService.getUser().personalNumber)) {
+    if (patient.canAccess?.includes(this.userService.getLoggedUser().personalNumber)) {
       this.sharedService.data = patient;
       this.router.navigate(['/patients/documentation/' + patient.code]);
     } else {

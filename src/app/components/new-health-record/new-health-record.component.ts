@@ -9,6 +9,7 @@ import {AssignedDiagnosis, Diagnosis} from "../../objects/diagnosis.config";
 import {MatTable} from "@angular/material/table";
 import {Observable} from 'rxjs';
 import {DiagnosisService} from "../../services/diagnosis.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-new-health-record',
@@ -41,13 +42,13 @@ export class NewHealthRecordComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private recordService: HealthRecordService,
-              private userService: UserService,
+              private userService: AuthService,
               private doctorService: DoctorService,
               private diagnosisService: DiagnosisService) { }
 
   ngOnInit(): void {
     this.loadDiagnosis();
-    this.doctor = this.doctorService.getDoctorByPersonalNumber(this.userService.getUser().personalNumber);
+    this.loadDoctor();
   }
 
   confirm() {
@@ -98,6 +99,15 @@ export class NewHealthRecordComponent implements OnInit {
         this.diagnosis = next;
         this.filteredDiagnosis = next;
       });
+  }
+
+  private loadDoctor() {
+    this.doctorService.getDoctorByPersonalNumber(this.userService.getLoggedUser().personalNumber)
+      .subscribe(
+        (data: Doctor) => {
+          this.doctor = data;
+        }
+      )
   }
 
 }

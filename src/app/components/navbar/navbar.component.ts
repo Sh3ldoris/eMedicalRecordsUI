@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
 
   public config?: MenuConfig;
 
-  constructor(public userService: UserService,
+  constructor(public userService: AuthService,
               private router: Router,
               private auth: AuthService) {}
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Patient} from "../../objects/patient.config";
 import {PatientService} from "../../services/patient.service";
 import {UserService} from "../../services/user.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-can-access-patients',
@@ -16,7 +17,7 @@ export class CanAccessPatientsComponent implements OnInit {
   private filter: any = null;
 
   constructor(public patientService: PatientService,
-              private userService: UserService) { }
+              private userService: AuthService) { }
 
   ngOnInit(): void {
     if (this.filter === null) {
@@ -44,7 +45,7 @@ export class CanAccessPatientsComponent implements OnInit {
   }
 
   private loadData() {
-    this.patientService.getAllPatientByDoctor(this.userService.getUser().personalNumber)
+    this.patientService.getAllPatientByDoctor(this.userService.getLoggedUser().personalNumber)
       .subscribe((next: Patient[]) => {this.patients = next});
   }
 

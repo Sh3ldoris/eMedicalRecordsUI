@@ -7,7 +7,6 @@ import {AuthService} from "./auth.service";
 export class SharedService {
 
   data: any;
-  isLoading: boolean = false;
   isLoadingContent: boolean = false;
 
   constructor(private auth: AuthService) { }

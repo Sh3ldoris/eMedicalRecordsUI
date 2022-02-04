@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import {Insurance, Patient, UrgentInfo} from "../objects/patient.config";
-import {PersonService} from "./person.service";
+import {Injectable} from '@angular/core';
+import {Patient} from "../objects/patient.config";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { map } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -12,15 +11,13 @@ export class PatientService {
 
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private personService: PersonService,
-              private http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   public getAllPatient(): Observable<Patient[]> {
       return this.getAllMockedPatients();
   }
 
-  //TODO Patients: Add Doctor parameter
   public getAllPatientByDoctor(personalNumber: string): Observable<Patient[]> {
     return this.getMockedPatientsByDoctor(personalNumber);
   }

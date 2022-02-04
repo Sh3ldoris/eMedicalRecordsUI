@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Doctor} from "../objects/user.config";
-import {PersonService} from "./person.service";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {Observable} from "rxjs";
@@ -10,8 +9,7 @@ import {Observable} from "rxjs";
 })
 export class DoctorService {
 
-  constructor(private personService: PersonService,
-              private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public getDoctorByPersonalNumber(pn: string) : Observable<Doctor> {
     return this.getDoctorFromServer(pn);

@@ -55,7 +55,6 @@ export class PatientService {
     return this.http.post('/api/patients', p, {headers: this.headers});
   }
 
-  //TODO Patients: Pass only patient object
   public updatePatient(patient: Patient): Observable<Patient> {
     return this.http.put('/api/patients/', patient, {headers: this.headers})
       .pipe(map((response: any) => response))

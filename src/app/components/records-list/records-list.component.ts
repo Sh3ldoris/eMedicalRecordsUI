@@ -3,7 +3,6 @@ import {Patient} from "../../objects/patient.config";
 import {PatientService} from "../../services/patient.service";
 import {Router} from "@angular/router";
 import {SharedService} from "../../services/shared.service";
-import {UserService} from "../../services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AccessDeniedComponent} from "../access-denied/access-denied.component";
 import {AuthService} from "../../services/auth.service";
@@ -21,13 +20,13 @@ export class RecordsListComponent implements OnInit {
   constructor(private patientService: PatientService,
               private sharedService: SharedService,
               private router: Router,
-              private userService: AuthService,
+              private auth: AuthService,
               public dialog: MatDialog) { }
 
   ngOnInit(): void {}
 
   openPatientCard(patient: Patient) {
-    if (patient.canAccess?.includes(this.userService.getLoggedUser().personalNumber)) {
+    if (patient.canAccess?.includes(this.auth.getLoggedPersonalNumber())) {
       this.sharedService.data = patient;
       this.router.navigate(['/patients/documentation/' + patient.code]);
     } else {

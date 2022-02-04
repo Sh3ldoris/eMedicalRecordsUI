@@ -1,0 +1,26 @@
+{
+  "patientCode": "eedf478a-64b3-47f8-b0b5-2579d1c311ae",
+  "date": "2022-02-04T20:53:34.982Z",
+  "title": "test",
+  "doctor": {
+    "personalNumber": "5ZY0153",
+    "person": {
+      "birthNumber": "doctor/2",
+      "firstName": "MUDr. Elena",
+      "lastName": "Auxtova",
+      "gender": "",
+      "birthDate": "1998-10-09T22:00:00.000Z",
+      "address": "",
+      "phone": "",
+      "familyState": "",
+      "occupation": ""
+    },
+    "specification": "všeobecná starostlivosť o deti a dorast",
+    "ambulance": {
+      "id": 2,
+      "name": "Štúrova  481/5 97646  Valaská",
+      "address": "Všeobecná ambulancia pre deti a dorast, Valaská"
+    }
+  },
+  "report": "sdfsdfds"
+}

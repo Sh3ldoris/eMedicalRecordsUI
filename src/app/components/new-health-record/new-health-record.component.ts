@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {HealthRecordService} from "../../services/health-record.service";
-import {UserService} from "../../services/user.service";
 import {DoctorService} from "../../services/doctor.service";
 import {HealthRecord} from "../../objects/health-record.config";
 import {Doctor} from "../../objects/user.config";
@@ -42,7 +41,7 @@ export class NewHealthRecordComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private recordService: HealthRecordService,
-              private userService: AuthService,
+              private auth: AuthService,
               private doctorService: DoctorService,
               private diagnosisService: DiagnosisService) { }
 
@@ -102,7 +101,7 @@ export class NewHealthRecordComponent implements OnInit {
   }
 
   private loadDoctor() {
-    this.doctorService.getDoctorByPersonalNumber(this.userService.getLoggedUser().personalNumber)
+    this.doctorService.getDoctorByPersonalNumber(this.auth.getLoggedPersonalNumber())
       .subscribe(
         (data: Doctor) => {
           this.doctor = data;

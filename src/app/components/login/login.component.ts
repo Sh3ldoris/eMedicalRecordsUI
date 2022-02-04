@@ -5,6 +5,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {LoginResponse} from "../../objects/auth.config";
 import {Doctor} from "../../objects/user.config";
 import {DoctorService} from "../../services/doctor.service";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -24,12 +25,10 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private fb: FormBuilder,
-              private router: Router,
-              private doctorService: DoctorService) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     if (this.auth.isLogIn()) {
-      console.log('geeeee');
       this.router.navigate(['/']);
     }
   }
@@ -42,13 +41,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (data: LoginResponse) => {
           this.auth.saveToken(data.token);
-          this.doctorService.getDoctorByPersonalNumber(data.personalNumber)
-            .subscribe(
-              (data: Doctor) => {
-                this.auth.setUser(data);
-                this.router.navigate(['']);
-              }
-            );
+          this.auth.setLoggedPersonalNumber(data.personalNumber);
+          this.router.navigate(['']);
         },
         error => {
           this.isLoginInformationRight = false;

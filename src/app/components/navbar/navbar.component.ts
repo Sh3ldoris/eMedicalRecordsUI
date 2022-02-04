@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuConfig, MenuItemConfig} from "../../objects/menu.config";
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
 import {AuthService} from "../../services/auth.service";
+import {Doctor} from "../../objects/user.config";
+import {DoctorService} from "../../services/doctor.service";
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,16 @@ import {AuthService} from "../../services/auth.service";
 export class NavbarComponent implements OnInit {
 
   public config?: MenuConfig;
+  user: Doctor;
 
   constructor(public userService: AuthService,
               private router: Router,
-              private auth: AuthService) {}
+              private auth: AuthService,
+              private docService: DoctorService) {}
 
   ngOnInit(): void {
     this.setConfig();
+    this.loadUser();
   }
 
   public setConfig() {
@@ -60,4 +64,13 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/sign-in']);
   }
 
+  private loadUser() {
+    this.docService.getDoctorByPersonalNumber(this.auth.getLoggedPersonalNumber())
+      .subscribe(
+        (data: Doctor) => {
+          console.log("User loading");
+          this.user = data;
+        }
+      );
+  }
 }

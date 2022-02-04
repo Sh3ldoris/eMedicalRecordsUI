@@ -3,7 +3,6 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {Patient} from "../../objects/patient.config";
 import {PatientService} from "../../services/patient.service";
 import {v4 as uuid} from "uuid";
-import {UserService} from "../../services/user.service";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
@@ -39,7 +38,7 @@ export class NewPatientComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private patientService: PatientService,
-              private userService: AuthService) { }
+              private auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -74,7 +73,7 @@ export class NewPatientComponent implements OnInit {
         transplantation: this.patientForm.get('transplantation')?.value  || '',
         bloodGroup: this.patientForm.get('bloodGroup')?.value  || ''
       },
-      canAccess: [this.userService.getLoggedUser().personalNumber]
+      canAccess: [this.auth.getLoggedPersonalNumber()]
     };
 
     console.log(newPatient);

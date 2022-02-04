@@ -1,35 +1,19 @@
 import {Injectable} from '@angular/core';
-import {UserService} from "./user.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {LoginResponse} from "../objects/auth.config";
 import {CookieService} from "ngx-cookie-service";
-import {Doctor} from "../objects/user.config";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public isLogged: boolean = true;
-
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private userService: UserService,
-              private http: HttpClient,
-              private cookies: CookieService) { }
-
-  public logIn(username: string, password: string): boolean {
-    const result = this.userService.users.filter( user => user.personalNumber === username && user.password === password);
-    if (result.length > 0) {
-      this.isLogged = true;
-      this.userService.setUser(result[0]);
-      return true;
-    }
-    this.isLogged = false;
-    return false;
-  }
+  constructor(private http: HttpClient,
+              private cookies: CookieService) {}
 
   public tryLogin(username: string, password: string): Observable<LoginResponse> {
     console.log('login');
@@ -46,13 +30,13 @@ export class AuthService {
       ));
   }
 
-  public setUser(user: Doctor) {
+  public setLoggedPersonalNumber(personalNumber: string) {
     this.cookies.delete('DOCTOR');
-    this.cookies.set('DOCTOR', JSON.stringify(user));
+    this.cookies.set('DOCTOR', personalNumber);
   }
 
-  public getLoggedUser(): Doctor {
-    return JSON.parse(this.cookies.get('DOCTOR'));
+  public getLoggedPersonalNumber(): string {
+    return this.cookies.get('DOCTOR');
   }
 
   public saveToken(token: string) {
@@ -65,7 +49,7 @@ export class AuthService {
   }
 
   public isLogIn(): boolean {
-    return this.cookies.get('DOCTOR') !== '';
+    return this.cookies.get('TOKEN') !== '';
   }
 
   public logOut() {

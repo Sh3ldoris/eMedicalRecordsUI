@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Doctor} from "../../objects/user.config";
+import {DoctorService} from "../../services/doctor.service";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
@@ -8,9 +10,23 @@ import {AuthService} from "../../services/auth.service";
 })
 export class AmbulanceComponent implements OnInit {
 
-  constructor(public userService: AuthService) { }
+  user: Doctor;
+
+  constructor(private docService: DoctorService,
+              private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.loadUser();
+  }
+
+  private loadUser() {
+    this.docService.getDoctorByPersonalNumber(this.auth.getLoggedPersonalNumber())
+      .subscribe(
+        (data: Doctor) => {
+          console.log("User loading");
+          this.user = data;
+        }
+      );
   }
 
 }

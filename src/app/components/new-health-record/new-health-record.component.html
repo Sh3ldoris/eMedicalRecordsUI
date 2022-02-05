@@ -1,4 +1,4 @@
-<div class="new-patient mb-4 px-4 pt-1 pb-3 shadow-sm">
+<div *ngIf="doctor !== undefined" class="new-patient mb-4 px-4 pt-1 pb-3 shadow-sm">
   <p class="pb-2">Nový záznam <i class="fa fa-pencil" aria-hidden="true" style="padding: 0 0.2rem; font-size: 1.1rem;"></i></p>
   <form (ngSubmit)="confirm()" [formGroup]="reportForm">
     <div class="row">

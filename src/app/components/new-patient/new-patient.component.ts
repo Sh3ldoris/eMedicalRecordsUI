@@ -22,7 +22,7 @@ export class NewPatientComponent implements OnInit {
     familyState: [null, Validators.required],
     occupation: [null, Validators.required],
     gender: [null, Validators.required],
-    address: [null],
+    address: [null, Validators.required],
     phone: [null, Validators.required],
     height: [null],
     weight: [null],
